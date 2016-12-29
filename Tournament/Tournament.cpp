@@ -3,6 +3,16 @@
 
 #include "Tournament.hpp"
 
+// C++ Entries
+#include "GunClubPlayer.hpp"
+#include "OpportunistPlayer.hpp"
+#include "TurtlePlayer.hpp"
+#include "BarricadePlayer.hpp"
+#include "BotRobotPlayer.hpp"
+#include "PlasmaPlayer.hpp"
+#include "SadisticShooterPlayer.hpp"
+#include "DeceptivePlayer.hpp"
+
 // Tournament pool of all valid entries.
 class Pool final
 {
@@ -18,7 +28,7 @@ public:
 		case 4: return std::make_unique<BotRobotPlayer>(opponent);
 		case 5: return std::make_unique<PlasmaPlayer>(opponent);
 		case 6: return std::make_unique<SadisticShooterPlayer>(opponent);
-		case 7: return std::make_unique<DeceiverPlayer>(opponent);
+		case 7: return std::make_unique<DeceptivePlayer>(opponent);
 		default: return nullptr;
 		}
 	}

@@ -8,16 +8,6 @@
 #include "ProxyPlayer.hpp"
 #include "GunDuel.hpp"
 
-// C++ Entries
-#include "GunClubPlayer.hpp"
-#include "OpportunistPlayer.hpp"
-#include "TurtlePlayer.hpp"
-#include "BarricadePlayer.hpp"
-#include "BotRobotPlayer.hpp"
-#include "PlasmaPlayer.hpp"
-#include "SadisticShooterPlayer.hpp"
-#include "DeceiverPlayer.hpp"
-
 // Necessary classes
 #include <iomanip>
 #include <memory>

@@ -4,15 +4,15 @@
 // DeceiverPlayer.hpp
 // If we have two shoots, better shoot one by one
 
-#ifndef __DECEIVER_PLAYER_HPP__
-#define __DECEIVER_PLAYER_HPP__
+#ifndef __DECEPTIVE_PLAYER_HPP__
+#define __DECEPTIVE_PLAYER_HPP__
 
 #include "Player.hpp"
 
-class DeceiverPlayer final : public Player
+class DeceptivePlayer final : public Player
 {
 public:
-	DeceiverPlayer(size_t opponent = -1) : Player(opponent) {}
+	DeceptivePlayer(size_t opponent = -1) : Player(opponent) {}
 
 public:
 	virtual Action fight()
@@ -76,4 +76,4 @@ public:
 	}
 };
 
-#endif // !__DECEIVER_PLAYER_HPP__
+#endif // !__DECEPTIVE_PLAYER_HPP__
