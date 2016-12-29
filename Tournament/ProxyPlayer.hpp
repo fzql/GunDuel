@@ -116,8 +116,6 @@ private:
 	}
 };
 
-#define STRINGIFY(x) #x
-
 // Example: BINARY_PLAYER(CustomPlayer)
 // Effects: Invoke CustomPlayer.exe <arguments>
 #define BINARY_PLAYER(x)                                              \
