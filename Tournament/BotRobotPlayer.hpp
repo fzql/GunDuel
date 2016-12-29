@@ -24,7 +24,7 @@ public:
 
 		int toDo = 3;
 
-		for (int i = 0; i < sizeof(options); i++) {
+		for (int i = 0; i < sizeof(options)/sizeof(std::string); i++) {
 			if (options[i].compare(action) == 0) {
 				toDo = outputs[i];
 				break;
