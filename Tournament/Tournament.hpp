@@ -17,6 +17,7 @@
 #include <chrono>
 #include <random>
 #include <iostream>
+#include <cassert>
 
 // Class responsible for a tournament.
 template <class Pool>
@@ -109,6 +110,8 @@ private:
 		case GunDuel::BWIN:
 			mScores[b].point += 1;
 			mScores[b].pointTotal += 1;
+			break;
+		case GunDuel::DRAW:
 			break;
 		}
 	}
