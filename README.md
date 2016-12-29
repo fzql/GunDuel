@@ -30,13 +30,13 @@ The binaries will be added to the repository if they meet the requirements and d
 
 ## Current Standing (a stastically-average run)
 
-Date: Dec 29, 2016
+    Date: Dec 29, 2016
 
-SadisticShooterPlayer  survived   7 rounds with 1907 total points.
-BotRobotPlayer         survived   6 rounds with 1822 total points.
-BarricadePlayer        survived   5 rounds with 1146 total points.
-TurtlePlayer           survived   4 rounds with 1035 total points.
-GunClubPlayer          survived   3 rounds with  908 total points.
-OpportunistPlayer      survived   2 rounds with  673 total points.
-PlasmaPlayer           survived   1 rounds with  426 total points.
-DeceptivePlayer        survived   0 rounds with  183 total points.
+    SadisticShooterPlayer  survived   7 rounds with 1907 total points.
+    BotRobotPlayer         survived   6 rounds with 1822 total points.
+    BarricadePlayer        survived   5 rounds with 1146 total points.
+    TurtlePlayer           survived   4 rounds with 1035 total points.
+    GunClubPlayer          survived   3 rounds with  908 total points.
+    OpportunistPlayer      survived   2 rounds with  673 total points.
+    PlasmaPlayer           survived   1 rounds with  426 total points.
+    DeceptivePlayer        survived   0 rounds with  183 total points.
