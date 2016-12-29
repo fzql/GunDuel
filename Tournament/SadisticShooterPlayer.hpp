@@ -10,7 +10,6 @@
 #include <cstdlib>
 #include "Player.hpp"
 #include <iostream>
-#include <conio.h>
 #include "GunDuel.hpp"
 
 
