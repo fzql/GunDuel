@@ -5,7 +5,9 @@
 #define __PLAYER_HPP__
 
 #include <vector>
+#include <limits>
 #include <string>
+#include <random>
 
 class Player
 {
@@ -59,6 +61,15 @@ public:
 
 	// Get History of opponent.
 	std::vector<Action> const &getHistoryOpponent() const { return mHistoryOpponent; }
+
+public:
+	// Get a random nonnegative int.
+	static int GetRandomInteger(int max = std::numeric_limits<int>::max()) {
+		static std::default_random_engine generator;
+
+		std::uniform_int_distribution<int> distribution(0, max);
+		return distribution(generator);
+	}
 
 protected:
 	// Action '0': load ammo
