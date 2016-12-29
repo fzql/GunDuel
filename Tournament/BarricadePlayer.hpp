@@ -14,13 +14,14 @@
 class BarricadePlayer final : public Player
 {
 public:
-	BarricadePlayer(size_t opponent = -1) : Player(opponent) { srand(time(0)); }
+	BarricadePlayer(size_t opponent = -1) : Player(opponent) {}
 
 public:
 	virtual Action fight()
 	{
+		srand(time(NULL));
 		if (getTurn() == 0) { return load(); }
-		int r = rand() % 100 + 1; //Get a random
+		int r = GetRandomInteger(99) + 1; //Get a random
 		if ((r <= 15) && (getAmmo() > 0)) { return bullet(); } //Override any action, and just shoot
 		else
 		{

@@ -31,7 +31,7 @@ public:
 		if (turn % 10)
 		{
 			// Generate random integer in [0, 5)
-			int random = rand() % 5;
+			int random = GetRandomInteger() % 5;
 			switch (random)
 			{
 			case 0:
