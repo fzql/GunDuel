@@ -7,6 +7,9 @@
     <Filter Include="Entries">
       <UniqueIdentifier>{778bf1a4-cd03-486c-8018-e53e4655b831}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documents">
+      <UniqueIdentifier>{f8c19411-8402-4ce3-a259-9abb959e7012}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.hpp">
@@ -33,5 +36,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tournament.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="..\README.md">
+      <Filter>Documents</Filter>
+    </None>
   </ItemGroup>
 </Project>
