@@ -13,7 +13,7 @@
 #include <memory>
 #include <algorithm>
 #include <limits>
-#include <numeric>>
+#include <numeric>
 #include <chrono>
 #include <random>
 
