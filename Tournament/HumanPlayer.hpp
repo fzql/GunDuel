@@ -14,7 +14,7 @@ public:
 	HumanPlayer(size_t opponent = -1) : Player(opponent) {}
 
 private:
-	const char *RESULT[3] = { "drew", "won", "lost" };
+	static const char *RESULT[3];
 
 public:
 	virtual Action fight()
@@ -99,7 +99,8 @@ public:
 		std::cout << "    YOU " << toActionString(getHistory()) << std::endl;
 		std::cout << "    FOE " << toActionString(getHistoryOpponent()) << std::endl;
 	};
-
 };
+
+const char *HumanPlayer::RESULT[3] = { "drew", "won", "lost" };
 
 #endif // !__HUMAN_PLAYER_HPP__
