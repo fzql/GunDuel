@@ -9,9 +9,15 @@
 #include <string>
 #include <sstream>
 
+#ifdef _WIN32
 #undef UNICODE
 #define NOMINMAX
 #include <Windows.h>
+#define EXE_SUFFIX ".exe"
+#else
+#include <cstdlib>
+#define EXE_SUFFIX ""
+#endif
 
 class ProxyPlayer : public Player
 {
@@ -76,6 +82,7 @@ private:
 	// Execute process with given arguments.
 	unsigned executeWithArguments(std::string const &arguments) const
 	{
+#ifdef _WIN32
 		STARTUPINFO startup = { sizeof(startup) };
 		PROCESS_INFORMATION process;
 		LPSTR lpApplicationName;
@@ -113,6 +120,9 @@ private:
 			GetExitCodeProcess(process.hProcess, &exitCode);
 			return exitCode;
 		}
+#else
+		return std::system((mProcess + " " + mScript + " " + arguments).c_str());
+#endif
 	}
 };
 
@@ -122,7 +132,7 @@ private:
 	class x final : public ProxyPlayer                                \
 	{                                                                 \
 	public:                                                           \
-		x(size_t opponent = -1) : ProxyPlayer(#x ".exe", opponent) {} \
+	    x(size_t opponent = -1) : ProxyPlayer(#x EXE_SUFFIX, opponent) {} \
 	};
 
 // Example: SCRIPT_PLAYER(CustomPlayer, "python", "CustomScriptPlayer.py")
