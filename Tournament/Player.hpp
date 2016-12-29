@@ -40,6 +40,8 @@ public:
 		case PLASMA:
 			mAmmoOpponent -= 2;
 			break;
+                default:
+                        break;
 		}
 	}
 
