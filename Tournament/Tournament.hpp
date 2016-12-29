@@ -16,6 +16,7 @@
 #include <numeric>
 #include <chrono>
 #include <random>
+#include <iostream>
 
 // Class responsible for a tournament.
 template <class Pool>
