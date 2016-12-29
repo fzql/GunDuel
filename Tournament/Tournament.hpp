@@ -178,7 +178,8 @@ private:
 				std::cout << "ALIVE";
 			else
 				std::cout << "-----";
-			std::cout << " " << sc.point << "/" << sc.pointTotal
+			std::cout << " " << std::setw(6) << sc.point << "/" 
+				<< std::setw(6) << sc.pointTotal
 				<< " " << sc.survival << std::endl;
 		});
 	}
@@ -192,7 +193,7 @@ private:
 			ScoreCard const &sc = mScores[index];
 
 			std::cout << "     Pool #" << index
-				<< " survived " << std::setw(4) << sc.survival
+				<< " survived " << std::setw(3) << sc.survival
 				<< " rounds with " << sc.pointTotal << " total points." << std::endl;
 		}
 	}
