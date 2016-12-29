@@ -12,6 +12,7 @@
 #include "PlasmaPlayer.hpp"
 #include "SadisticShooterPlayer.hpp"
 #include "DeceptivePlayer.hpp"
+#include <iostream>
 
 // Tournament pool of all valid entries.
 class Pool final
@@ -44,5 +45,7 @@ int main()
 	Tournament<Pool> tournament(repetition);
 	tournament.run();
 
-	system("pause");
+    std::cout<<"Press Enter to quit... ";
+    std::cin.ignore();
+    return 0;
 }
