@@ -68,7 +68,6 @@ public:
 	// Run the tournament!
 	void run()
 	{
-		size_t round = 0;
 		while (getPlayerRemaining() > 1)
 		{
 			startRound();
