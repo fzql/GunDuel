@@ -92,10 +92,9 @@ public:
 				}
 			}
 			endRound();
-
 			printScore();
 		}
-		printScore();
+		printScoreBoard();
 	}
 
 private:
@@ -113,9 +112,11 @@ private:
 		{
 		case GunDuel::AWIN:
 			mScores[a].point += 1;
+			mScores[a].pointTotal += 1;
 			break;
 		case GunDuel::BWIN:
 			mScores[b].point += 1;
+			mScores[b].pointTotal += 1;
 			break;
 		}
 	}
@@ -134,16 +135,23 @@ private:
 	{
 		// Get the minimum score.
 		int minPoint = std::numeric_limits<int>::max();
-		std::for_each(mScores.begin(), mScores.end(), [&minPoint](ScoreCard const &sc) -> void {
+		int minPointTotal = std::numeric_limits<int>::max();
+		std::for_each(mScores.begin(), mScores.end(), [&](ScoreCard const &sc) -> void {
 			if (sc.alive && sc.point < minPoint)
+			{
 				minPoint = sc.point;
+			}
+			if (sc.alive && sc.pointTotal < minPointTotal)
+			{
+				minPointTotal = sc.pointTotal;
+			}
 		});
 
 		// Eliminate remaining players who have the lowest score.
-		std::for_each(mScores.begin(), mScores.end(), [&minPoint](ScoreCard &sc) -> void {
+		std::for_each(mScores.begin(), mScores.end(), [&](ScoreCard &sc) -> void {
 			if (!sc.alive) return;
 			// Only loop through players that are alive.
-			if (sc.point > minPoint)
+			if (sc.point >= minPoint && sc.pointTotal > minPointTotal)
 			{
 				// Advance player to next round.
 				sc.history.push_back(sc.point);
@@ -154,7 +162,6 @@ private:
 				// Remove player from tournament.
 				sc.alive = false;
 			}
-			sc.pointTotal += sc.point;
 		});
 	}
 
@@ -179,7 +186,7 @@ private:
 				std::cout << "ALIVE";
 			else
 				std::cout << "-----";
-			std::cout << " " << sc.point
+			std::cout << " " << sc.point << "/" << sc.pointTotal
 				<< " " << sc.survival << std::endl;
 		});
 	}
