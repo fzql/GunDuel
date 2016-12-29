@@ -18,7 +18,7 @@ class ProxyPlayer : public Player
 public:
 	// Initialize with process (without .exe) and identifier of opponent.
 	ProxyPlayer(std::string const &process, std::string const &script = "", size_t opponent = -1)
-		: mProcess(process), mScript(script), Player(opponent) {}
+	    : Player(opponent), mProcess(process), mScript(script) {}
 
 public:
 	// Invoke other process.
