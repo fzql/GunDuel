@@ -1,34 +1,38 @@
 // Player.hpp
 // Holds a tournament.
 
-#include "Player.hpp"
-#include "GunClubPlayer.hpp"
-#include "HumanPlayer.hpp"
+#include "Tournament.hpp"
 
-#include "ProxyPlayer.hpp"
-#include "GunDuel.hpp"
+// Tournament pool of all valid entries.
+class Pool final
+{
+public:
+	static std::unique_ptr<Player> newPlayer(size_t index, size_t opponent)
+	{
+		switch (index)
+		{
+		case 0: return std::make_unique<GunClubPlayer>(opponent);
+		case 1: return std::make_unique<OpportunistPlayer>(opponent);
+		case 2: return std::make_unique<TurtlePlayer>(opponent);
+		case 3: return std::make_unique<BarricadePlayer>(opponent);
+		case 4: return std::make_unique<BotRobotPlayer>(opponent);
+		case 5: return std::make_unique<PlasmaPlayer>(opponent);
+		case 6: return std::make_unique<SadisticShooterPlayer>(opponent);
+		case 7: return std::make_unique<DeceiverPlayer>(opponent);
+		default: return nullptr;
+		}
+	}
+
+public:
+	static size_t size() { return 8; }
+};
 
 int main()
 {
-	size_t duelLength = 100;
-	size_t repetition = 1;
+	size_t repetition = 100;
 
-	HumanPlayer h(2);
-	GunClubPlayer g(1);
+	Tournament<Pool> tournament(repetition);
+	tournament.run();
 
-	GunDuel duel(h, g, duelLength);
-	GunDuel::Outcome outcome = duel.fight();
-	switch (outcome)
-	{
-	case GunDuel::AWIN:
-		std::cout << " :: AWIN" << std::endl;
-		break;
-	case GunDuel::BWIN:
-		std::cout << " :: BWIN" << std::endl;
-		break;
-	default:
-		std::cout << " :: DRAW" << std::endl;
-		break;
-	}
 	system("pause");
 }
