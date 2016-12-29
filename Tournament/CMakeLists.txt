@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+project(tournament)
+set(CMAKE_CXX_STANDARD 14)
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_definitions(-Wall -Wextra -Wno-unused-parameter)
+endif()
+add_executable(tournament Tournament.cpp)
