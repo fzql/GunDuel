@@ -55,7 +55,7 @@ public:
 	// Invoke other process.
 	virtual Action fight()
 	{
-		DWORD choice = executeWithArguments(getArguments(3));
+		unsigned choice = executeWithArguments(getArguments(3));
 		switch (choice)
 		{
 		case 48: return load();
@@ -105,7 +105,7 @@ private:
 	}
 
 	// Execute process with given arguments.
-	DWORD executeWithArguments(std::string const &arguments) const
+	unsigned executeWithArguments(std::string const &arguments) const
 	{
 #ifdef _WIN32
 		STARTUPINFO startup = { sizeof(startup) };
