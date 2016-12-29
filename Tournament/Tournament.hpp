@@ -5,7 +5,6 @@
 #define __TOURNAMENT_HPP__
 
 // Tournament Core
-#include "HumanPlayer.hpp"
 #include "ProxyPlayer.hpp"
 #include "GunDuel.hpp"
 
@@ -19,9 +18,12 @@
 #include "SadisticShooterPlayer.hpp"
 #include "DeceiverPlayer.hpp"
 
-#include <limits>
+// Necessary classes
+#include <iomanip>
 #include <memory>
 #include <algorithm>
+#include <limits>
+#include <numeric>>
 #include <chrono>
 #include <random>
 
@@ -189,6 +191,20 @@ private:
 			std::cout << " " << sc.point << "/" << sc.pointTotal
 				<< " " << sc.survival << std::endl;
 		});
+	}
+
+	// Print scoreboard.
+	void printScoreBoard() const
+	{
+		std::cout << " :: Final Scoreboard" << std::endl;
+		for (size_t index = 0; index < mSize; ++index)
+		{
+			ScoreCard const &sc = mScores[index];
+
+			std::cout << "     Pool #" << index
+				<< " survived " << std::setw(4) << sc.survival
+				<< " rounds with " << sc.pointTotal << " total points." << std::endl;
+		}
 	}
 
 private:
