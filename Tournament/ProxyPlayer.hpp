@@ -10,6 +10,7 @@
 #include <sstream>
 
 #undef UNICODE
+#define NOMINMAX
 #include <Windows.h>
 
 class ProxyPlayer : public Player
@@ -95,8 +96,6 @@ private:
 			actualArguments.append(1, ' ');
 			actualArguments.append(arguments);
 		}
-
-		std::cout << mProcess << " " << arguments << std::endl;
 
 		startup.cb = sizeof(startup);
 		BOOL result = CreateProcess(lpApplicationName, lpCommandLine,
