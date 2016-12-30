@@ -33,30 +33,6 @@
     <ClInclude Include="Tournament.hpp">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="BlackHatPlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
-    <ClInclude Include="OpportunistPlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
-    <ClInclude Include="DeceptivePlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
-    <ClInclude Include="TurtlePlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
-    <ClInclude Include="BotRobotPlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
-    <ClInclude Include="BarricadePlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
-    <ClInclude Include="PlasmaPlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
-    <ClInclude Include="SadisticShooterPlayer.hpp">
-      <Filter>Entries</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tournament.cpp" />
