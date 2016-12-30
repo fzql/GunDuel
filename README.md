@@ -11,7 +11,7 @@ Please :
 
 ## Non C++ Submissions
 
-Language Allowed: Python.
+Language Allowed: Python 3, Java.
 
 Executables Allowed.
 
