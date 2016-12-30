@@ -10,20 +10,20 @@
 class TurtlePlayer final : public Player {
 
 public:
-	TurtlePlayer(size_t opponent = -1) : Player(opponent) { srand(time(0)); }
+	TurtlePlayer(size_t opponent = -1) : Player(opponent) {}
 
 public:
 	virtual Action fight() {
 		if (getAmmoOpponent() > 0) {
 			// Beware! Opponent has ammo!
 
-			if (rand() % 5 == 0 && getAmmo() > 0)
+			if (GetRandomInteger() % 5 == 0 && getAmmo() > 0)
 				// YOLO it:
 				return getAmmo() > 1 ? plasma() : bullet();
 
 			// Play it safe:
 			if (getAmmoOpponent() == 1) return metal();
-			return rand() % 2 ? metal() : thermal();
+			return GetRandomInteger() % 2 ? metal() : thermal();
 		}
 
 		if (getAmmo() == 0)
@@ -36,6 +36,6 @@ public:
 
 		else
 			// Either load, or take a shot.
-			return rand() % 2 ? load() : bullet();
+			return GetRandomInteger() % 2 ? load() : bullet();
 	}
 };
