@@ -43,8 +43,8 @@ The binaries will be added to the repository if they meet the requirements and d
 | [StudiousPlayer][12]       | C++      | 9 rounds |   4044 |
 | [SadisticShooter][8]       | C++      | 8 rounds |   2110 |
 | [BarricadePlayer][5]       | C++      | 7 rounds |   2033 |
-| [BotRobotPlayer][6]        | C++      | 5 rounds |   1625 |
 | [SurvivorPlayer][13]       | C++      | 6 rounds |   1895 |
+| [BotRobotPlayer][6]        | C++      | 5 rounds |   1625 |
 | [TurtlePlayer][4]          | C++      | 4 rounds |   1249 |
 | [GunClubPlayer][2]         | C++      | 3 rounds |   1121 |
 | [DeceptivePlayer][9]       | C++      | 2 rounds |    860 | 
