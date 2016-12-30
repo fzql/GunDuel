@@ -1,7 +1,7 @@
-// SadisticShooterPlayer by muddyfish
+// SadisticShooter by muddyfish
 // PPCG: http://codegolf.stackexchange.com/a/104947/11933
 
-// SadisticShooterPlayer.hpp
+// SadisticShooter.hpp
 // A very sad person. He likes to shoot people.
 
 #ifndef __SAD_SHOOTER_PLAYER_HPP__
@@ -11,10 +11,10 @@
 #include "Player.hpp"
 // #include <iostream>
 
-class SadisticShooterPlayer final : public Player
+class SadisticShooter final : public Player
 {
 public:
-	SadisticShooterPlayer(size_t opponent = -1) : Player(opponent) {}
+	SadisticShooter(size_t opponent = -1) : Player(opponent) {}
 private:
 	bool historySame(std::vector<Action> history, int elements) {
 		if (history.size() < elements) return false;
