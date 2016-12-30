@@ -1,8 +1,6 @@
 // Player.hpp
 // Holds a tournament.
 
-#include "Tournament.hpp"
-
 // C++ Entries
 #include "GunClubPlayer.hpp"
 #include "OpportunistPlayer.hpp"
@@ -13,17 +11,22 @@
 #include "SadisticShooterPlayer.hpp"
 #include "DeceptivePlayer.hpp"
 #include "StudiousPlayer.hpp"
-#include <iostream>
+
+// Non C++ Entries
+#include "ProxyPlayer.hpp"
+
+// Tournament
+#include "Tournament.hpp"
 
 // Support C++11
 #if __cplusplus > 201103L
 using std::make_unique;
 #else
 namespace {
-template<typename T, typename... Args>
-std::unique_ptr<T> make_unique(Args&&... args) {
-	return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
-}
+	template<typename T, typename... Args>
+	std::unique_ptr<T> make_unique(Args&&... args) {
+		return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+	}
 }
 #endif
 
