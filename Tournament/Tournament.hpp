@@ -5,10 +5,10 @@
 #define __TOURNAMENT_HPP__
 
 // Tournament Core
-#include "ProxyPlayer.hpp"
 #include "GunDuel.hpp"
 
 // Necessary classes
+#include <iostream>
 #include <iomanip>
 #include <memory>
 #include <algorithm>
