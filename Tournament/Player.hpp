@@ -66,8 +66,8 @@ public:
 public:
 	// Get a random nonnegative int.
 	static int GetRandomInteger(int max = std::numeric_limits<int>::max()) {
-		static long long seed = std::chrono::system_clock::now().time_since_epoch().count();
-		static std::default_random_engine generator(seed);
+		static auto seed = std::chrono::system_clock::now().time_since_epoch().count();
+		static std::default_random_engine generator((unsigned)seed);
 		std::uniform_int_distribution<int> distribution(0, max);
 		return distribution(generator);
 	}
