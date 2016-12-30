@@ -33,21 +33,21 @@ Command Line and Return Code Requirements
 
 The binaries will be added to the repository if they meet the requirements and does no harm to any computer.
 
-## Current Standing (a random run)
+## Current Standing (update upon new submission)
 
 06:24:07 UTC, Friday, 30 December 2016
 
-| Player                     | Survival | Points|
-|:-------------------------- | --------:| -----:|
-| [StudiousPlayer][12]       | 8 rounds |  3246 |
-| [SadisticShooterPlayer][8] | 7 rounds |  1678 |
-| [BotRobotPlayer][6]        | 6 rounds |  1611 |
-| [BarricadePlayer][5]       | 5 rounds |  1497 |
-| [TurtlePlayer][4]          | 4 rounds |  1277 |
-| [GunClubPlayer][2]         | 3 rounds |   931 |
-| [OpportunistPlayer][3]     | 2 rounds |   727 |
-| [DeceptivePlayer][9]       | 1 rounds |   489 | 
-| [PlasmaPlayer][7]          | 0 rounds |   244 |
+| Player                     | Language | Survival | Points |
+|:-------------------------- |:-------- | --------:| ------:|
+| [StudiousPlayer][12]       | C++      | 8 rounds |   3246 |
+| [SadisticShooterPlayer][8] | C++      | 7 rounds |   1678 |
+| [BotRobotPlayer][6]        | C++      | 6 rounds |   1611 |
+| [BarricadePlayer][5]       | C++      | 5 rounds |   1497 |
+| [TurtlePlayer][4]          | C++      | 4 rounds |   1277 |
+| [GunClubPlayer][2]         | C++      | 3 rounds |    931 |
+| [OpportunistPlayer][3]     | C++      | 2 rounds |    727 |
+| [DeceptivePlayer][9]       | C++      | 1 rounds |    489 | 
+| [PlasmaPlayer][7]          | C++      | 0 rounds |    244 |
 
 Disqualified Players (Honorable Mentions)
 
