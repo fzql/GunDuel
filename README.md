@@ -4,11 +4,18 @@ Futuristic Gun Duel Tournament at [Programming Puzzles & Code Golf at Stack Exch
 
 ## C++ Submissions
 
-Please post your submission as an answer to the PPCG.SE post. If it meets the rules, your submission will be added to the repository, at which point you can commit on your own files.
+Please :
 
-## Wrapper for external .exe binary
+ - Post your submission as an answer to the PPCG.SE post.
+ - Fork this project and request your files to be pulled.
 
-To make sure that your non-C++ player can communicate with the tournament manager, please compile your binary which will follow the rules in this snippet:
+## Non C++ Submissions
+
+Language Allowed: Python.
+
+Executables Allowed.
+
+Command Line and Return Code Requirements
 
     Expected Command Line Argument Format:
     	<opponent-id> <turn> <status> <ammo> <ammo-opponent> <history> <history-opponent>
@@ -30,17 +37,16 @@ The binaries will be added to the repository if they meet the requirements and d
 
 ## Current Standing (a random run)
 
-    06:24:07 UTC
-    Friday, 30 December 2016
+06:24:07 UTC, Friday, 30 December 2016
 
-    StudiousPlayer         survived   8 rounds with 3246 total points.
-    SadisticShooterPlayer  survived   7 rounds with 1678 total points.
-    BotRobotPlayer         survived   6 rounds with 1611 total points.
-    BarricadePlayer        survived   5 rounds with 1497 total points.
-    TurtlePlayer           survived   4 rounds with 1277 total points.
-    GunClubPlayer          survived   3 rounds with 931 total points.
-    OpportunistPlayer      survived   2 rounds with 727 total points.
-    DeceptivePlayer        survived   1 rounds with 489 total points.
-    PlasmaPlayer           survived   0 rounds with 244 total points.
-
- :: Press Enter to Quit...
+| Player                | Survival | Points|
+|:--------------------- | --------:| -----:|
+| StudiousPlayer        | 8 rounds |  3246 |
+| SadisticShooterPlayer | 7 rounds |  1678 |
+| BotRobotPlayer        | 6 rounds |  1611 |
+| BarricadePlayer       | 5 rounds |  1497 |
+| TurtlePlayer          | 4 rounds |  1277 |
+| GunClubPlayer         | 3 rounds |   931 |
+| OpportunistPlayer     | 2 rounds |   727 |
+| DeceptivePlayer       | 1 rounds |   489 | 
+| PlasmaPlayer          | 0 rounds |   244 |
