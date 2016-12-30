@@ -12,6 +12,7 @@
 #include "PlasmaPlayer.hpp"
 #include "SadisticShooterPlayer.hpp"
 #include "DeceptivePlayer.hpp"
+#include "StudiousPlayer.hpp"
 #include <iostream>
 
 // Support C++11
@@ -42,12 +43,13 @@ public:
 		case 5: return make_unique<PlasmaPlayer>(opponent);
 		case 6: return make_unique<SadisticShooterPlayer>(opponent);
 		case 7: return make_unique<DeceptivePlayer>(opponent);
+		case 8: return make_unique<StudiousPlayer>(opponent);
 		default: return nullptr;
 		}
 	}
 
 public:
-	static size_t size() { return 8; }
+	static size_t size() { return 9; }
 };
 
 int main()
