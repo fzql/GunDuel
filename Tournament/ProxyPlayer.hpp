@@ -88,21 +88,22 @@ private:
 		LPSTR lpApplicationName;
 		LPSTR lpCommandLine;
 
-		lpApplicationName = const_cast<char *>(mProcess.c_str());
+		std::string actualArguments;
 		if (mScript.length() == 0)
 		{
 			// Binary Proxy Player
 			// name.exe arguments
-			lpCommandLine = const_cast<char *>(arguments.c_str());
+			actualArguments = arguments;
 		}
 		else
 		{
 			// Script Proxy Player
 			// python.exe script.py arguments
-			std::string actualArguments = mScript;
-			actualArguments.append(1, ' ');
-			actualArguments.append(arguments);
+			actualArguments = mScript + ' ' + arguments;
 		}
+
+		lpApplicationName = const_cast<char *>(mProcess.c_str());
+		lpCommandLine = const_cast<char *>(actualArguments.c_str());
 
 		startup.cb = sizeof(startup);
 		BOOL result = CreateProcess(lpApplicationName, lpCommandLine,
