@@ -11,22 +11,6 @@
 
 #ifdef _WIN32
 #undef UNICODE
-<<<<<<< HEAD
-#define NOMINMAX
-#include <Windows.h>
-<<<<<<< HEAD
-||||||| parent of 6bf7a07... Fix ProxyPlayer.hpp for MinGW compilation
-#define NOMINMAX
-#include <Windows.h>
-#define EXE_SUFFIX ".exe"
-#else
-#include <cstdlib>
-#define EXE_SUFFIX ""
-#endif
-=======
-#ifdef NOMINMAX
-#undef NOMINMAX
-#endif
 #define NOMINMAX 1
 #include <windows.h>
 #define EXE_SUFFIX ".exe"
@@ -34,15 +18,6 @@
 #include <cstdlib>
 #define EXE_SUFFIX ""
 #endif
->>>>>>> 6bf7a07... Fix ProxyPlayer.hpp for MinGW compilation
-||||||| parent of 36eb91b... Platform-agnostic implementation of ProxyPlayer (using system)
-=======
-#define EXE_SUFFIX ".exe"
-#else
-#include <cstdlib>
-#define EXE_SUFFIX ""
-#endif
->>>>>>> 36eb91b... Platform-agnostic implementation of ProxyPlayer (using system)
 
 class ProxyPlayer : public Player
 {
