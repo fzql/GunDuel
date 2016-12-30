@@ -12,6 +12,7 @@
 #include "PlasmaPlayer.hpp"
 #include "SadisticShooterPlayer.hpp"
 #include "DeceptivePlayer.hpp"
+// #include "BlackHatPlayer.hpp" // Disquialified: Tampers with vtables
 
 // Tournament pool of all valid entries.
 class Pool final
@@ -29,12 +30,13 @@ public:
 		case 5: return std::make_unique<PlasmaPlayer>(opponent);
 		case 6: return std::make_unique<SadisticShooterPlayer>(opponent);
 		case 7: return std::make_unique<DeceptivePlayer>(opponent);
+		// case 8: return std::make_unique<BlackHatPlayer>(opponent);
 		default: return nullptr;
 		}
 	}
 
 public:
-	static size_t size() { return 8; }
+	static size_t size() { return 9; }
 };
 
 int main()
