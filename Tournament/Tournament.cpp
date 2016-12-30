@@ -11,6 +11,7 @@
 #include "SadisticShooter.hpp"
 #include "DeceptivePlayer.hpp"
 #include "StudiousPlayer.hpp"
+#include "SurvivorPlayer.hpp"
 
 // Non C++ Entries
 #include "ProxyPlayer.hpp"
@@ -47,12 +48,13 @@ public:
 		case 6: return make_unique<SadisticShooter>(opponent);
 		case 7: return make_unique<DeceptivePlayer>(opponent);
 		case 8: return make_unique<StudiousPlayer>(opponent);
+		case 9: return make_unique<SurvivorPlayer>(opponent);
 		default: return nullptr;
 		}
 	}
 
 public:
-	static size_t size() { return 9; }
+	static size_t size() { return 10; }
 };
 
 int main()
