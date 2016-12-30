@@ -1,5 +1,5 @@
 // BlackHatPlayer by Matteo Italia
-// http://codegolf.stackexchange.com/a/105061/11933
+// PPCG: http://codegolf.stackexchange.com/a/105061/11933
 // Disqualified because it tempers with opponent's vtables. Nice try, though!
 
 // BlackHatPlayer.hpp
