@@ -4,7 +4,7 @@
 // DeceiverPlayer.hpp
 // If we have two shoots, better shoot one by one
 
-#ifndef __DECEPTIVE_PLAYER_HPP__
+#ifndef __DECEIVER_PLAYER_HPP__
 #define __DECEPTIVE_PLAYER_HPP__
 
 #include "Player.hpp"
@@ -28,7 +28,7 @@ public:
 		}
 
 		// Every 10 turns the Deceiver goes crazy
-		if (turn % 10)
+		if (turn % 10 || opponentAmmo >= 3)
 		{
 			// Generate random integer in [0, 5)
 			int random = GetRandomInteger() % 5;
