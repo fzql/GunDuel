@@ -145,13 +145,21 @@
     <ClCompile Include="Tournament.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BarricadePlayer.hpp" />
+    <ClInclude Include="BlackHatPlayer.hpp" />
+    <ClInclude Include="BotRobotPlayer.hpp" />
     <ClInclude Include="CustomPlayer.hpp" />
+    <ClInclude Include="DeceptivePlayer.hpp" />
     <ClInclude Include="GunClubPlayer.hpp" />
     <ClInclude Include="GunDuel.hpp" />
     <ClInclude Include="HumanPlayer.hpp" />
+    <ClInclude Include="OpportunistPlayer.hpp" />
+    <ClInclude Include="PlasmaPlayer.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="ProxyPlayer.hpp" />
+    <ClInclude Include="SadisticShooterPlayer.hpp" />
     <ClInclude Include="Tournament.hpp" />
+    <ClInclude Include="TurtlePlayer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\LICENSE" />
