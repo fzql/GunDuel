@@ -73,6 +73,10 @@ public:
 		{
 			return thermal();
 		}
+
+		// Disables compiler warnings.
+		// Returns invalid action if return path is not met.
+		return (Action)5;
 	}
 };
 
