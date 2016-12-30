@@ -47,7 +47,7 @@ public:
 	}
 
 public:
-	static size_t size() { return 9; }
+	static size_t size() { return 8; }
 };
 
 int main()
