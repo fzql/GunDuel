@@ -35,21 +35,20 @@ The binaries will be added to the repository if they meet the requirements and d
 
 ## Current Standing (update upon new submission)
 
-03:47 PM Friday, December 30, 2016 Coordinated Universal Time (UTC)
+04:39 PM Friday, December 30, 2016 Coordinated Universal Time (UTC)
 
-
-| Player                     | Language | Survival | Points |
-|:-------------------------- |:-------- | --------:| ------:|
-| [StudiousPlayer][12]       | C++      | 9 rounds |   4044 |
-| [SadisticShooter][8]       | C++      | 8 rounds |   2110 |
-| [BarricadePlayer][5]       | C++      | 7 rounds |   2033 |
-| [SurvivorPlayer][13]       | C++      | 6 rounds |   1895 |
-| [BotRobotPlayer][6]        | C++      | 5 rounds |   1625 |
-| [TurtlePlayer][4]          | C++      | 4 rounds |   1249 |
-| [GunClubPlayer][2]         | C++      | 3 rounds |   1121 |
-| [DeceptivePlayer][9]       | C++      | 2 rounds |    860 | 
-| [PlasmaPlayer][7]          | C++      | 1 rounds |    486 |
-| [OpportunistPlayer][3]     | C++      | 0 rounds |    269 |
+| Player                           | Language   | Survival  | Points |
+|:-------------------------------- |:---------- | ---------:| ------:|
+| [StudiousPlayer][12]             | C++        |  9 rounds |   4052 |
+| [BarricadePlayer][5]             | C++        |  8 rounds |   2136 |
+| [SadisticShooter][8]             | C++        |  7 rounds |   1969 |
+| [SurvivorPlayer][13]             | C++        |  6 rounds |   1865 |
+| [BotRobotPlayer][6]              | C++        |  5 rounds |   1685 |
+| [TurtlePlayer][4]                | C++        |  4 rounds |   1226 |
+| [GunClubPlayer][2]               | C++        |  3 rounds |   1108 |
+| [DeceptivePlayer][9]             | C++        |  2 rounds |    794 |
+| [PlasmaPlayer][7]                | C++        |  1 round  |    491 |
+| [OpportunistPlayer][3]           | C++        |  0 rounds |    261 |
 
 Disqualified Players (Honorable Mentions)
 
