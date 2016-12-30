@@ -28,15 +28,19 @@ The binaries will be added to the repository if they meet the requirements and d
 
  [1]: http://codegolf.stackexchange.com/q/104896/11933
 
-## Current Standing (a stastically-average run)
+## Current Standing (a random run)
 
-    Date: Dec 29, 2016
+    06:24:07 UTC
+    Friday, 30 December 2016
 
-    SadisticShooterPlayer  survived   7 rounds with 1907 total points.
-    BotRobotPlayer         survived   6 rounds with 1822 total points.
-    BarricadePlayer        survived   5 rounds with 1146 total points.
-    TurtlePlayer           survived   4 rounds with 1035 total points.
-    GunClubPlayer          survived   3 rounds with  908 total points.
-    OpportunistPlayer      survived   2 rounds with  673 total points.
-    PlasmaPlayer           survived   1 rounds with  426 total points.
-    DeceptivePlayer        survived   0 rounds with  183 total points.
+    StudiousPlayer         survived   8 rounds with 3246 total points.
+    SadisticShooterPlayer  survived   7 rounds with 1678 total points.
+    BotRobotPlayer         survived   6 rounds with 1611 total points.
+    BarricadePlayer        survived   5 rounds with 1497 total points.
+    TurtlePlayer           survived   4 rounds with 1277 total points.
+    GunClubPlayer          survived   3 rounds with 931 total points.
+    OpportunistPlayer      survived   2 rounds with 727 total points.
+    DeceptivePlayer        survived   1 rounds with 489 total points.
+    PlasmaPlayer           survived   0 rounds with 244 total points.
+
+ :: Press Enter to Quit...
