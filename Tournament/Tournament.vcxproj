@@ -160,6 +160,7 @@
     <ClInclude Include="SadisticShooterPlayer.hpp" />
     <ClInclude Include="StudiousPlayer.hpp" />
     <ClInclude Include="Tournament.hpp" />
+    <ClInclude Include="TurtlePlayer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\LICENSE" />
