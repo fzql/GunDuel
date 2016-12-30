@@ -19,7 +19,6 @@ public:
 public:
 	virtual Action fight()
 	{
-		srand(time(NULL));
 		if (getTurn() == 0) { return load(); }
 		int r = GetRandomInteger(99) + 1; //Get a random
 		if ((r <= 15) && (getAmmo() > 0)) { return bullet(); } //Override any action, and just shoot
