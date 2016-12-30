@@ -59,7 +59,7 @@ int main()
 	Tournament<Pool> tournament(repetition);
 	tournament.run();
 
-    std::cout<<"Press Enter to quit... ";
+	std::cout << " :: Press Enter to Quit...";
     std::cin.ignore();
     return 0;
 }
