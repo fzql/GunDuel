@@ -4,18 +4,20 @@
 #include "Player.hpp"
 
 // For randomness:
+#include <ctime>
+#include <cstdlib>
 
 class TurtlePlayer final : public Player {
 
 public:
-	TurtlePlayer(size_t opponent = -1) : Player(opponent) {}
+	TurtlePlayer(size_t opponent = -1) : Player(opponent) { srand(time(0)); }
 
 public:
 	virtual Action fight() {
 		if (getAmmoOpponent() > 0) {
 			// Beware! Opponent has ammo!
 
-			if (GetRandomInteger() % 5 == 0 && getAmmo() > 0)
+			if (rand() % 5 == 0 && getAmmo() > 0)
 				// YOLO it:
 				return getAmmo() > 1 ? plasma() : bullet();
 
@@ -34,6 +36,6 @@ public:
 
 		else
 			// Either load, or take a shot.
-			return GetRandomInteger() % 2 ? load() : bullet();
+			return rand() % 2 ? load() : bullet();
 	}
 };

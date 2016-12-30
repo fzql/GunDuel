@@ -73,9 +73,6 @@ public:
 		{
 			return thermal();
 		}
-
-		// Please return something, otherwise there will be compiler warning.
-		return load();
 	}
 };
 
