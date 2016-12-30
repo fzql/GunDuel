@@ -16,7 +16,7 @@ class SadisticShooter final : public Player
 public:
 	SadisticShooter(size_t opponent = -1) : Player(opponent) {}
 private:
-	bool historySame(std::vector<Action> history, int elements) {
+	bool historySame(std::vector<Action> const &history, int elements) {
 		if (history.size() < elements) return false;
 
 		std::vector<Action> lastElements(history.end() - elements, history.end());
