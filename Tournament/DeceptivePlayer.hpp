@@ -28,7 +28,7 @@ public:
 		}
 
 		// Every 10 turns the Deceiver goes crazy
-		if (turn % 10)
+                if (turn % 10 || opponentAmmo>=3)
 		{
 			// Generate random integer in [0, 5)
 			int random = GetRandomInteger() % 5;

@@ -12,7 +12,19 @@
 #include "PlasmaPlayer.hpp"
 #include "SadisticShooterPlayer.hpp"
 #include "DeceptivePlayer.hpp"
-// #include "BlackHatPlayer.hpp" // Disquialified: Tampers with vtables
+#include <iostream>
+
+// Support C++11
+#if __cplusplus > 201103L
+using std::make_unique;
+#else
+namespace {
+template<typename T, typename... Args>
+std::unique_ptr<T> make_unique(Args&&... args) {
+	return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+}
+}
+#endif
 
 // Tournament pool of all valid entries.
 class Pool final
@@ -22,15 +34,14 @@ public:
 	{
 		switch (index)
 		{
-		case 0: return std::make_unique<GunClubPlayer>(opponent);
-		case 1: return std::make_unique<OpportunistPlayer>(opponent);
-		case 2: return std::make_unique<TurtlePlayer>(opponent);
-		case 3: return std::make_unique<BarricadePlayer>(opponent);
-		case 4: return std::make_unique<BotRobotPlayer>(opponent);
-		case 5: return std::make_unique<PlasmaPlayer>(opponent);
-		case 6: return std::make_unique<SadisticShooterPlayer>(opponent);
-		case 7: return std::make_unique<DeceptivePlayer>(opponent);
-		// case 8: return std::make_unique<BlackHatPlayer>(opponent);
+		case 0: return make_unique<GunClubPlayer>(opponent);
+		case 1: return make_unique<OpportunistPlayer>(opponent);
+		case 2: return make_unique<TurtlePlayer>(opponent);
+		case 3: return make_unique<BarricadePlayer>(opponent);
+		case 4: return make_unique<BotRobotPlayer>(opponent);
+		case 5: return make_unique<PlasmaPlayer>(opponent);
+		case 6: return make_unique<SadisticShooterPlayer>(opponent);
+		case 7: return make_unique<DeceptivePlayer>(opponent);
 		default: return nullptr;
 		}
 	}
@@ -46,5 +57,7 @@ int main()
 	Tournament<Pool> tournament(repetition);
 	tournament.run();
 
-	system("pause");
+    std::cout<<"Press Enter to quit... ";
+    std::cin.ignore();
+    return 0;
 }
