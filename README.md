@@ -33,20 +33,35 @@ Command Line and Return Code Requirements
 
 The binaries will be added to the repository if they meet the requirements and does no harm to any computer.
 
- [1]: http://codegolf.stackexchange.com/q/104896/11933
-
 ## Current Standing (a random run)
 
 06:24:07 UTC, Friday, 30 December 2016
 
-| Player                | Survival | Points|
-|:--------------------- | --------:| -----:|
-| StudiousPlayer        | 8 rounds |  3246 |
-| SadisticShooterPlayer | 7 rounds |  1678 |
-| BotRobotPlayer        | 6 rounds |  1611 |
-| BarricadePlayer       | 5 rounds |  1497 |
-| TurtlePlayer          | 4 rounds |  1277 |
-| GunClubPlayer         | 3 rounds |   931 |
-| OpportunistPlayer     | 2 rounds |   727 |
-| DeceptivePlayer       | 1 rounds |   489 | 
-| PlasmaPlayer          | 0 rounds |   244 |
+| Player                     | Survival | Points|
+|:-------------------------- | --------:| -----:|
+| [StudiousPlayer][12]       | 8 rounds |  3246 |
+| [SadisticShooterPlayer][8] | 7 rounds |  1678 |
+| [BotRobotPlayer][6]        | 6 rounds |  1611 |
+| [BarricadePlayer][5]       | 5 rounds |  1497 |
+| [TurtlePlayer][4]          | 4 rounds |  1277 |
+| [GunClubPlayer][2]         | 3 rounds |   931 |
+| [OpportunistPlayer][3]     | 2 rounds |   727 |
+| [DeceptivePlayer][9]       | 1 rounds |   489 | 
+| [PlasmaPlayer][7]          | 0 rounds |   244 |
+
+Disqualified Players (Honorable Mentions)
+
+ - [BlackHatPlayer][10] (Locates and modifies [vtable][11] of rival entries)
+
+ [1]: http://codegolf.stackexchange.com/q/104896/11933
+ [2]: http://codegolf.stackexchange.com/a/104899/11933
+ [3]: http://codegolf.stackexchange.com/a/104902/11933
+ [4]: http://codegolf.stackexchange.com/a/104905/11933
+ [5]: http://codegolf.stackexchange.com/a/104909/11933
+ [6]: http://codegolf.stackexchange.com/a/104910/11933
+ [7]: http://codegolf.stackexchange.com/a/104933/11933
+ [8]: http://codegolf.stackexchange.com/a/104947/11933
+ [9]: http://codegolf.stackexchange.com/a/104972/11933
+ [10]: http://codegolf.stackexchange.com/a/105061/11933
+ [11]: https://en.wikipedia.org/wiki/Vtable
+ [12]: http://codegolf.stackexchange.com/a/105066/11933
