@@ -7,7 +7,7 @@
 #include "Player.hpp"
 #include <unordered_map>
 
-struct StudiousPlayer : Player
+class StudiousPlayer final : public Player
 {
 	using Player::GetRandomInteger;
 	// Represents an opponent's action for a specific state.
@@ -41,12 +41,15 @@ struct StudiousPlayer : Player
 		std::vector<OpponentAction> os;
 		Opponent() : os(15) {}
 	};
-	StudiousPlayer(size_t opponent)
+
+public:
+	StudiousPlayer(size_t opponent = -1)
 		: Player(opponent)
 		, strat(storedLs()[opponent])
 		, ammoOpponent()
 	{
 	}
+
 	Player::Action fight() {
 		// Compute the current "ammo state".
 		// For convenience here (aka, readability in switch),
