@@ -48,8 +48,8 @@ public:
 		std::string arguments;
 		switch (result)
 		{
-		case WIN:  arguments = getArguments(1);
-		case LOSS: arguments = getArguments(2);
+		case WIN:  arguments = getArguments(1); break;
+		case LOSS: arguments = getArguments(2); break;
 		default:   arguments = getArguments(0);
 		}
 		executeWithArguments(arguments);
