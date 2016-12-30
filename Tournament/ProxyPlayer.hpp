@@ -122,7 +122,12 @@ private:
 			return exitCode;
 		}
 #else
-		return std::system((mProcess + " " + mScript + " " + arguments).c_str());
+		std::string commandLine;
+		if (mScript.length() > 0)
+			commandLine = mProcess + " " + mScript + " " + arguments;
+		else
+			commandLine = mProcess + " " + arguments;
+		return std::system(commandLine.c_str());
 #endif
 	}
 };
