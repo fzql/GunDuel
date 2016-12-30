@@ -1,7 +1,7 @@
-// SadisticShooterPlayer by muddyfish
+// SadisticShooter by muddyfish
 // PPCG: http://codegolf.stackexchange.com/a/104947/11933
 
-// SadisticShooterPlayer.hpp
+// SadisticShooter.hpp
 // A very sad person. He likes to shoot people.
 
 #ifndef __SAD_SHOOTER_PLAYER_HPP__
@@ -11,11 +11,20 @@
 #include "Player.hpp"
 // #include <iostream>
 
-class SadisticShooterPlayer final : public Player
+class SadisticShooter final : public Player
 {
 public:
-	SadisticShooterPlayer(size_t opponent = -1) : Player(opponent) {}
+	SadisticShooter(size_t opponent = -1) : Player(opponent) {}
+private:
+	bool historySame(std::vector<Action> const &history, int elements) {
+		if (history.size() < elements) return false;
 
+		std::vector<Action> lastElements(history.end() - elements, history.end());
+
+		for (Action const &action : lastElements)
+			if (action != lastElements[0]) return false;
+		return true;
+	}
 public:
 	virtual Action fight()
 	{
@@ -32,9 +41,9 @@ public:
 			// It would be idiotic not to load here
 			return load();
 		}
-		if (turn_number == 2 && getHistoryOpponent()[1] == THERMAL) {
-			// What an idiot
-			return bullet();
+		if (my_ammo >= 2 && historySame(getHistoryOpponent(), 3)) {
+			if (getHistoryOpponent()[turn_number - 1] == THERMAL) return bullet();
+			if (getHistoryOpponent()[turn_number - 1] == METAL) return thermal();
 		}
 		if (my_ammo < 2 && opponent_ammo == 1) {
 			// I'd rather not die thank you very much
@@ -54,7 +63,7 @@ public:
 			// Your plasma weapon doesn't scare me
 			return thermal();
 		}
-		if (my_ammo > 1) {
+		if (my_ammo >= 2) {
 			// 85% more bullet per bullet
 			if (turn_number == 4) return bullet();
 			return plasma();

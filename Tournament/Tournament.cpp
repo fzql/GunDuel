@@ -8,7 +8,7 @@
 #include "BarricadePlayer.hpp"
 #include "BotRobotPlayer.hpp"
 #include "PlasmaPlayer.hpp"
-#include "SadisticShooterPlayer.hpp"
+#include "SadisticShooter.hpp"
 #include "DeceptivePlayer.hpp"
 #include "StudiousPlayer.hpp"
 
@@ -44,7 +44,7 @@ public:
 		case 3: return make_unique<BarricadePlayer>(opponent);
 		case 4: return make_unique<BotRobotPlayer>(opponent);
 		case 5: return make_unique<PlasmaPlayer>(opponent);
-		case 6: return make_unique<SadisticShooterPlayer>(opponent);
+		case 6: return make_unique<SadisticShooter>(opponent);
 		case 7: return make_unique<DeceptivePlayer>(opponent);
 		case 8: return make_unique<StudiousPlayer>(opponent);
 		default: return nullptr;
