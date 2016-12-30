@@ -11,8 +11,11 @@
 
 #ifdef _WIN32
 #undef UNICODE
-#define NOMINMAX
-#include <Windows.h>
+#ifdef NOMINMAX
+#undef NOMINMAX
+#endif
+#define NOMINMAX 1
+#include <windows.h>
 #define EXE_SUFFIX ".exe"
 #else
 #include <cstdlib>
