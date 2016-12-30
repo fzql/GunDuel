@@ -60,6 +60,9 @@
     <ClInclude Include="TurtlePlayer.hpp">
       <Filter>Entries</Filter>
     </ClInclude>
+    <ClInclude Include="SurvivorPlayer.hpp">
+      <Filter>Entries</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tournament.cpp" />
