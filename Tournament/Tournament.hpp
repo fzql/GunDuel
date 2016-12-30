@@ -11,11 +11,13 @@
 #include <iostream>
 #include <iomanip>
 #include <memory>
+#include <regex>
 #include <algorithm>
 #include <limits>
 #include <numeric>
 #include <chrono>
 #include <random>
+#include <typeinfo>
 
 // Class responsible for a tournament.
 template <class Pool>
@@ -195,14 +197,30 @@ private:
 	// Print scoreboard.
 	void printScoreBoard() const
 	{
+		std::regex classRegex("(?:.*) (.*)$");
+
 		std::cout << " :: Final Scoreboard" << std::endl;
 		for (size_t index = 0; index < mSize; ++index)
 		{
 			ScoreCard const &sc = mScores[index];
 
-			std::cout << "     Pool #" << index
-				<< " survived " << std::setw(3) << sc.survival
-				<< " rounds with " << sc.pointTotal << " total points." << std::endl;
+			std::string classDecl(typeid(*Pool::newPlayer(index)).name());
+			std::string className;
+			std::smatch classMatch;
+
+			if (std::regex_search(classDecl, classMatch, classRegex))
+			{
+				className = classMatch[1];
+			}
+
+			// | [Class][Lnk] | Language | Survival | Points |
+			std::cout
+				<< "| " << std::setw(32) << std::left << std::string("[") + className + "][]"
+				<< " | " << std::setw(10) << "C++"
+				<< " | " << std::setw(2) << std::right << sc.survival << " round"
+				<< (sc.survival == 1 ? " " : "s")
+				<< " | " << std::setw(6) << std::right << sc.pointTotal
+				<< " |" << std::endl;
 		}
 	}
 
