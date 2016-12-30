@@ -7,21 +7,12 @@
 #ifndef __SAD_SHOOTER_PLAYER_HPP__
 #define __SAD_SHOOTER_PLAYER_HPP__
 
-#include <cstdlib>
 #include "Player.hpp"
-#include <iostream>
-#include <conio.h>
-#include "GunDuel.hpp"
-
 
 class SadisticShooterPlayer final : public Player
 {
 public:
 	SadisticShooterPlayer(size_t opponent = -1) : Player(opponent) {}
-
-private:
-	const char *ACTION[5] = { "LOAD", "BULLET", "PLASMA", "METAL", "THERMAL" };
-	const char *RESULT[3] = { "drew", "won", "lost" };
 
 public:
 	virtual Action fight()
