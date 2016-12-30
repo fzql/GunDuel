@@ -127,25 +127,33 @@ private:
 	{
 		// Get the minimum score.
 		int minPoint = std::numeric_limits<int>::max();
-		int minPointTotal = std::numeric_limits<int>::max();
 		std::for_each(mScores.begin(), mScores.end(), [&](ScoreCard const &sc) -> void {
 			if (sc.alive && sc.point < minPoint)
-			{
 				minPoint = sc.point;
+		});
+
+		int minPointTotal = std::numeric_limits<int>::max();
+		std::for_each(mScores.begin(), mScores.end(), [&](ScoreCard &sc) -> void {
+			if (!sc.alive) return;
+			// Only loop through players that are alive.
+			if (sc.point > minPoint)
+			{
+				// Advance player to next round.
+				sc.history.push_back(sc.point);
+				sc.survival++;
 			}
-			if (sc.alive && sc.pointTotal < minPointTotal)
+			else if (sc.pointTotal < minPointTotal)
 			{
 				minPointTotal = sc.pointTotal;
 			}
 		});
 
-		// Eliminate remaining players who have the lowest score.
 		std::for_each(mScores.begin(), mScores.end(), [&](ScoreCard &sc) -> void {
-			if (!sc.alive) return;
-			// Only loop through players that are alive.
-			if (sc.point >= minPoint && sc.pointTotal > minPointTotal)
+			if (sc.point > minPoint) return;
+			// Only loop through tied players.
+			if (sc.pointTotal > minPointTotal)
 			{
-				// Advance player to next round.
+				// Advance tied player to next round.
 				sc.history.push_back(sc.point);
 				sc.survival++;
 			}
