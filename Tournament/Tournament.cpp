@@ -63,6 +63,6 @@ int main()
 	tournament.run();
 
 	std::cout << " :: Press Enter to Quit...";
-    std::cin.ignore();
-    return 0;
+	std::cin.ignore();
+	return 0;
 }

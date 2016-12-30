@@ -159,6 +159,7 @@
     <ClInclude Include="ProxyPlayer.hpp" />
     <ClInclude Include="SadisticShooterPlayer.hpp" />
     <ClInclude Include="StudiousPlayer.hpp" />
+    <ClInclude Include="SurvivorPlayer.hpp" />
     <ClInclude Include="Tournament.hpp" />
     <ClInclude Include="TurtlePlayer.hpp" />
   </ItemGroup>
