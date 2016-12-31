@@ -24,7 +24,7 @@ public:
 
 public:
 	// Register a duel from two players
-	GunDuel(Player &a, Player &b, size_t turns = 2017) : mA(a), mB(b), mTurns(turns) {}
+	GunDuel(Player &a, Player &b, size_t turns = 100) : mA(a), mB(b), mTurns(turns) {}
 
 public:
 	// Start a duel between two players
@@ -39,7 +39,7 @@ public:
 			Player::Action actionB = mB.fight();
 			// Verify that actions are valid from both sides.
 			bool validA = mA.getAmmo() >= 0 && (size_t)actionA < (size_t)5;
-			bool validB = mB.getAmmo() >= 0 && (size_t)actionA < (size_t)5;
+			bool validB = mB.getAmmo() >= 0 && (size_t)actionB < (size_t)5;
 			mA.perceive(actionB);
 			mB.perceive(actionA);
 
