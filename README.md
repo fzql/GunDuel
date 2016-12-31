@@ -35,39 +35,39 @@ The binaries will be added to the repository if they meet the requirements and d
 
 ## Current Standing (update upon new submission)
 
-07:00 AM Saturday, December 31, 2016 Coordinated Universal Time (UTC)
+08:38 AM Saturday, December 31, 2016 Coordinated Universal Time (UTC)
 
 | Player                           | Language   | Survival  | Points |
 |:-------------------------------- |:---------- | ---------:| ------:|
-| [StudiousPlayer][12]             | C++        | 12 rounds |   5551 |
-| [MontePlayer][16]                | C++        | 11 rounds |   6166 |
-| [CBetaPlayer][15]                | C++        | 10 rounds |   3924 |
-| [FatedPlayer][14]                | C++        |  9 rounds |   3328 |
-| [BarricadePlayer][5]             | C++        |  8 rounds |   3115 |
-| [SadisticShooter][8]             | C++        |  7 rounds |   2793 |
-| [BotRobotPlayer][6]              | C++        |  6 rounds |   2632 |
-| [SurvivorPlayer][13]             | C++        |  5 rounds |   2304 |
-| [TurtlePlayer][4]                | C++        |  4 rounds |   1892 |
-| [GunClubPlayer][2]               | C++        |  3 rounds |   1568 |
-| [DeceptivePlayer][9]             | C++        |  2 rounds |   1158 |
-| [PlasmaPlayer][7]                | C++        |  1 round  |    724 |
-| [OpportunistPlayer][3]           | C++        |  0 rounds |    380 |
+| [MontePlayer][16]                | C++        | 12 rounds |   6152 |
+| [CBetaPlayer][15]                | C++        | 11 rounds |   3903 |
+| [StudiousPlayer][12]             | C++        | 10 rounds |   5513 |
+| [FatedPlayer][14]                | C++        |  9 rounds |   3462 |
+| [BarricadePlayer][7]             | C++        |  8 rounds |   3125 |
+| [BotRobotPlayer][8]              | C++        |  7 rounds |   2624 |
+| [SadisticShooter][10]            | C++        |  6 rounds |   2806 |
+| [SurvivorPlayer][13]             | C++        |  5 rounds |   2282 |
+| [TurtlePlayer][6]                | C++        |  4 rounds |   1888 |
+| [GunClubPlayer][4]               | C++        |  3 rounds |   1550 |
+| [DeceptivePlayer][11]            | C++        |  2 rounds |   1125 |
+| [PlasmaPlayer][9]                | C++        |  1 round  |    694 |
+| [OpportunistPlayer][5]           | C++        |  0 rounds |    380 |
 
 Disqualified Players (Honorable Mentions)
 
  - [BlackHatPlayer][10] (Locates and modifies [vtable][11] of rival entries)
 
  [1]: http://codegolf.stackexchange.com/q/104896/11933
- [2]: http://codegolf.stackexchange.com/a/104899/11933
- [3]: http://codegolf.stackexchange.com/a/104902/11933
- [4]: http://codegolf.stackexchange.com/a/104905/11933
- [5]: http://codegolf.stackexchange.com/a/104909/11933
- [6]: http://codegolf.stackexchange.com/a/104910/11933
- [7]: http://codegolf.stackexchange.com/a/104933/11933
- [8]: http://codegolf.stackexchange.com/a/104947/11933
- [9]: http://codegolf.stackexchange.com/a/104972/11933
- [10]: http://codegolf.stackexchange.com/a/105061/11933
- [11]: https://en.wikipedia.org/wiki/Vtable
+ [2]: http://codegolf.stackexchange.com/a/105061/11933
+ [3]: https://en.wikipedia.org/wiki/Vtable
+ [4]: http://codegolf.stackexchange.com/a/104899/11933
+ [5]: http://codegolf.stackexchange.com/a/104902/11933
+ [6]: http://codegolf.stackexchange.com/a/104905/11933
+ [7]: http://codegolf.stackexchange.com/a/104909/11933
+ [8]: http://codegolf.stackexchange.com/a/104910/11933
+ [9]: http://codegolf.stackexchange.com/a/104933/11933
+ [10]: http://codegolf.stackexchange.com/a/104947/11933
+ [11]: http://codegolf.stackexchange.com/a/104972/11933
  [12]: http://codegolf.stackexchange.com/a/105066/11933
  [13]: http://codegolf.stackexchange.com/a/105084/11933
  [14]: http://codegolf.stackexchange.com/a/105131/11933

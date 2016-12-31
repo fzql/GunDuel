@@ -151,7 +151,7 @@ private:
 		});
 
 		std::for_each(mScores.begin(), mScores.end(), [&](ScoreCard &sc) -> void {
-			if (sc.point > minPoint) return;
+			if (!sc.alive || sc.point > minPoint) return;
 			// Only loop through tied players.
 			if (sc.pointTotal > minPointTotal)
 			{
@@ -199,6 +199,7 @@ private:
 	{
 		std::regex classRegex("(?:.*) (.*)$");
 
+		int scoreboardLink = 4;
 		std::cout << " :: Final Scoreboard" << std::endl;
 		for (size_t index = 0; index < mSize; ++index)
 		{
@@ -215,7 +216,7 @@ private:
 
 			// | [Class][Lnk] | Language | Survival | Points |
 			std::cout
-				<< "| " << std::setw(32) << std::left << std::string("[") + className + "][]"
+				<< "| " << std::setw(32) << std::left << std::string("[") + className + "][" + std::to_string(scoreboardLink++) + "]"
 				<< " | " << std::setw(10) << "C++"
 				<< " | " << std::setw(2) << std::right << sc.survival << " round"
 				<< (sc.survival == 1 ? " " : "s")
