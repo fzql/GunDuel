@@ -22,7 +22,7 @@ public:
 		case 1:c.push_back([&] {return metal(); });
 		case 0:;
 		}
-		return c[GetRandomInteger(c.size() - 1)]();
+		return c[GetRandomInteger(int(c.size() - 1))]();
 	}
 };
 

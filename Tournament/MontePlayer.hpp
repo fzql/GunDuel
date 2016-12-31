@@ -115,8 +115,8 @@ class MontePlayer final : public Player
 public:
 	MontePlayer(size_t opponent = -1) : Player(opponent)
 	{
-		srand(time(NULL));
-		this->opponent = opponent;
+		srand((unsigned)time(NULL));
+		this->opponent = (int)opponent;
 	}
 
 public:
