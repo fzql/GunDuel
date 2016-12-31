@@ -35,11 +35,11 @@ public:
 		Outcome status = DRAW;
 		while (!forceEnd && turn < mTurns && status == DRAW)
 		{
-			Player::Action actionA = mA.fight();
-			Player::Action actionB = mB.fight();
+			Player::Action actionA = mA.performFight();
+			Player::Action actionB = mB.performFight();
 			// Verify that actions are valid from both sides.
 			bool validA = mA.getAmmo() >= 0 && (size_t)actionA < (size_t)5;
-			bool validB = mB.getAmmo() >= 0 && (size_t)actionB < (size_t)5;
+			bool validB = mB.getAmmo() >= 0 && (size_t)actionA < (size_t)5;
 			mA.perceive(actionB);
 			mB.perceive(actionA);
 

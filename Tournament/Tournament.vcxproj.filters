@@ -69,6 +69,9 @@
     <ClInclude Include="CBetaPlayer.hpp">
       <Filter>Entries</Filter>
     </ClInclude>
+    <ClInclude Include="MontePlayer.hpp">
+      <Filter>Entries</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tournament.cpp" />

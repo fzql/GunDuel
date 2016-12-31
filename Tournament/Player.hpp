@@ -74,19 +74,19 @@ public:
 
 protected:
 	// Action '0': load ammo
-	Action load() { mAmmo += 1; return action(LOAD); }
+	Action load() { return LOAD; }
 
 	// Action '1': fire bullet
-	Action bullet() { mAmmo -= 1; return action(BULLET); }
+	Action bullet() { return BULLET; }
 
 	// Action '2': fire plasma
-	Action plasma() { mAmmo -= 2; return action(PLASMA); }
+	Action plasma() { return PLASMA; }
 
 	// Action '-': shoot bullet
-	Action metal() { return action(METAL); }
+	Action metal() { return METAL; }
 
 	// Action '=': shoot bullet
-	Action thermal() { return action(THERMAL); }
+	Action thermal() { return THERMAL; }
 
 	// Get the unique identifier of opponent.
 	size_t getOpponent() const { return mOpponent; }
@@ -95,6 +95,22 @@ protected:
 	int getAmmoOpponent() const { return mAmmoOpponent; }
 
 private:
+	// Allow GunDuel to perform a fight.
+	friend class GunDuel;
+
+	// Trigger actual fight; "inverted" NVI
+	Action performFight()
+	{
+		Action rv = action(fight());
+		switch (rv) 
+		{
+		case LOAD:   ++mAmmo; break;
+		case PLASMA: --mAmmo;
+		case BULLET: --mAmmo; break;
+		}
+		return rv;
+	}
+
 	// Unique identifier of opponent.
 	size_t mOpponent = 0;
 

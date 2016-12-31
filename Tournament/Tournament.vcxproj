@@ -155,6 +155,7 @@
     <ClInclude Include="GunClubPlayer.hpp" />
     <ClInclude Include="GunDuel.hpp" />
     <ClInclude Include="HumanPlayer.hpp" />
+    <ClInclude Include="MontePlayer.hpp" />
     <ClInclude Include="OpportunistPlayer.hpp" />
     <ClInclude Include="PlasmaPlayer.hpp" />
     <ClInclude Include="Player.hpp" />
