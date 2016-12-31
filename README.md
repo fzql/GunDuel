@@ -9,9 +9,17 @@ Please :
  - Post your submission as an answer to the PPCG.SE post.
  - Fork this project and request your files to be pulled.
 
-## Non C++ Submissions
+## Python Submissions
 
-Language Allowed: Python 3, Java.
+Edit `PythonPlayer\<architecture>\PythonPlayer.py` to test your submission.
+
+ - You can save state files, which are subject to removal at the beginning of a tournament.
+ - Your script is called once per turn.
+ - Commandline interface may change before Jan. 7, 2017.
+
+## Other Submissions
+
+Language Allowed: Java.
 
 Executables Allowed.
 
