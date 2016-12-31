@@ -47,9 +47,8 @@ public:
 		: mSize(Pool::size()), mRepetition(repetition), mScores(mSize)
 	{
 		// Randomly assign identifier.
-		std::vector<size_t> identifiers;
-		for (size_t index = 0; index < mSize; ++index)
-			identifiers.push_back(index);
+		std::vector<size_t> identifiers(mSize);
+		std::iota(identifiers.begin(), identifiers.end(), 0);
 		unsigned seed = (unsigned)std::chrono::system_clock::now().time_since_epoch().count();
 		std::shuffle(identifiers.begin(), identifiers.end(), std::default_random_engine(seed));
 
@@ -182,8 +181,7 @@ private:
 		std::cout << " :: ScoreBoard" << std::endl;
 		size_t index = 0;
 		std::for_each(mScores.begin(), mScores.end(), [&index](ScoreCard const &sc) -> void {
-			std::cout << "    " << (index++)
-				<< " ";
+			std::cout << "    " << std::setw(2) << (index++) << " ";
 			if (sc.alive)
 				std::cout << "ALIVE";
 			else
@@ -200,7 +198,8 @@ private:
 		std::regex classRegex("(?:.*) (.*)$");
 
 		int scoreboardLink = 4;
-		std::cout << " :: Final Scoreboard" << std::endl;
+
+		std::vector<std::string> lines;
 		for (size_t index = 0; index < mSize; ++index)
 		{
 			ScoreCard const &sc = mScores[index];
@@ -210,19 +209,37 @@ private:
 			std::smatch classMatch;
 
 			if (std::regex_search(classDecl, classMatch, classRegex))
-			{
 				className = classMatch[1];
-			}
+			else
+				className = classDecl;
 
 			// | [Class][Lnk] | Language | Survival | Points |
-			std::cout
-				<< "| " << std::setw(32) << std::left << std::string("[") + className + "][" + std::to_string(scoreboardLink++) + "]"
+			std::stringstream sst;
+			sst << " | " << std::setw(40) << std::left << std::string("[") + className + "][" + std::to_string(scoreboardLink++) + "]"
 				<< " | " << std::setw(10) << "C++"
 				<< " | " << std::setw(2) << std::right << sc.survival << " round"
 				<< (sc.survival == 1 ? " " : "s")
 				<< " | " << std::setw(6) << std::right << sc.pointTotal
-				<< " |" << std::endl;
+				<< " |";
+			lines.push_back(sst.str());
 		}
+
+		// Sort by survival
+		std::vector<size_t> indices(mSize);
+		std::iota(indices.begin(), indices.end(), 0);
+		std::vector<ScoreCard> const &scores = mScores;
+		std::sort(indices.begin(), indices.end(), [scores](size_t a, size_t b) -> bool {
+			return scores[a].survival > scores[b].survival
+				|| scores[a].survival == scores[b].survival && scores[a].pointTotal > scores[b].pointTotal;
+		});
+
+		// Prints table for README.md
+		std::cout << " :: Final Scoreboard\n\n"
+			<< " | Player                                   | Language   | Survival  | Points |\n"
+			<< " |:---------------------------------------- |:---------- | ---------:| ------:|\n";
+		for (size_t index : indices)
+			std::cout << lines[index] << "\n";
+		std::cout << std::endl;
 	}
 
 private:
