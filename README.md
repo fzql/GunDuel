@@ -55,7 +55,7 @@ The binaries will be added to the repository if they meet the requirements and d
 
 Disqualified Players (Honorable Mentions)
 
- - [BlackHatPlayer][10] (Locates and modifies [vtable][11] of rival entries)
+ - [BlackHatPlayer][2] (Locates and modifies [vtable][3] of rival entries)
 
  [1]: http://codegolf.stackexchange.com/q/104896/11933
  [2]: http://codegolf.stackexchange.com/a/105061/11933
