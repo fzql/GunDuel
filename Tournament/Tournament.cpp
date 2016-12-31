@@ -12,6 +12,8 @@
 #include "DeceptivePlayer.hpp"
 #include "StudiousPlayer.hpp"
 #include "SurvivorPlayer.hpp"
+#include "FatedPlayer.hpp"
+#include "CBetaPlayer.hpp"
 
 // Non C++ Entries
 #include "ProxyPlayer.hpp"
@@ -35,7 +37,7 @@ namespace {
 class Pool final
 {
 public:
-	static std::unique_ptr<Player> newPlayer(size_t index, size_t opponent)
+	static std::unique_ptr<Player> newPlayer(size_t index, size_t opponent = -1)
 	{
 		switch (index)
 		{
@@ -49,12 +51,14 @@ public:
 		case 7: return make_unique<DeceptivePlayer>(opponent);
 		case 8: return make_unique<StudiousPlayer>(opponent);
 		case 9: return make_unique<SurvivorPlayer>(opponent);
+		case 10: return make_unique<FatedPlayer>(opponent);
+		case 11: return make_unique<CBetaPlayer>(opponent);
 		default: return nullptr;
 		}
 	}
 
 public:
-	static size_t size() { return 10; }
+	static size_t size() { return 12; }
 };
 
 int main()

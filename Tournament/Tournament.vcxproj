@@ -148,8 +148,10 @@
     <ClInclude Include="BarricadePlayer.hpp" />
     <ClInclude Include="BlackHatPlayer.hpp" />
     <ClInclude Include="BotRobotPlayer.hpp" />
+    <ClInclude Include="CBetaPlayer.hpp" />
     <ClInclude Include="CustomPlayer.hpp" />
     <ClInclude Include="DeceptivePlayer.hpp" />
+    <ClInclude Include="FatedPlayer.hpp" />
     <ClInclude Include="GunClubPlayer.hpp" />
     <ClInclude Include="GunDuel.hpp" />
     <ClInclude Include="HumanPlayer.hpp" />
