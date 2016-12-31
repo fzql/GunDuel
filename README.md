@@ -35,20 +35,23 @@ The binaries will be added to the repository if they meet the requirements and d
 
 ## Current Standing (update upon new submission)
 
-04:39 PM Friday, December 30, 2016 Coordinated Universal Time (UTC)
+07:00 AM Saturday, December 31, 2016 Coordinated Universal Time (UTC)
 
 | Player                           | Language   | Survival  | Points |
 |:-------------------------------- |:---------- | ---------:| ------:|
-| [StudiousPlayer][12]             | C++        |  9 rounds |   4052 |
-| [BarricadePlayer][5]             | C++        |  8 rounds |   2136 |
-| [SadisticShooter][8]             | C++        |  7 rounds |   1969 |
-| [SurvivorPlayer][13]             | C++        |  6 rounds |   1865 |
-| [BotRobotPlayer][6]              | C++        |  5 rounds |   1685 |
-| [TurtlePlayer][4]                | C++        |  4 rounds |   1226 |
-| [GunClubPlayer][2]               | C++        |  3 rounds |   1108 |
-| [DeceptivePlayer][9]             | C++        |  2 rounds |    794 |
-| [PlasmaPlayer][7]                | C++        |  1 round  |    491 |
-| [OpportunistPlayer][3]           | C++        |  0 rounds |    261 |
+| [StudiousPlayer][12]             | C++        | 12 rounds |   5551 |
+| [MontePlayer][16]                | C++        | 11 rounds |   6166 |
+| [CBetaPlayer][15]                | C++        | 10 rounds |   3924 |
+| [FatedPlayer][14]                | C++        |  9 rounds |   3328 |
+| [BarricadePlayer][5]             | C++        |  8 rounds |   3115 |
+| [SadisticShooter][8]             | C++        |  7 rounds |   2793 |
+| [BotRobotPlayer][6]              | C++        |  6 rounds |   2632 |
+| [SurvivorPlayer][13]             | C++        |  5 rounds |   2304 |
+| [TurtlePlayer][4]                | C++        |  4 rounds |   1892 |
+| [GunClubPlayer][2]               | C++        |  3 rounds |   1568 |
+| [DeceptivePlayer][9]             | C++        |  2 rounds |   1158 |
+| [PlasmaPlayer][7]                | C++        |  1 round  |    724 |
+| [OpportunistPlayer][3]           | C++        |  0 rounds |    380 |
 
 Disqualified Players (Honorable Mentions)
 
@@ -67,3 +70,6 @@ Disqualified Players (Honorable Mentions)
  [11]: https://en.wikipedia.org/wiki/Vtable
  [12]: http://codegolf.stackexchange.com/a/105066/11933
  [13]: http://codegolf.stackexchange.com/a/105084/11933
+ [14]: http://codegolf.stackexchange.com/a/105131/11933
+ [15]: http://codegolf.stackexchange.com/a/105154/11933
+ [16]: http://codegolf.stackexchange.com/a/105175/11933
