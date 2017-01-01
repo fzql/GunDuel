@@ -220,12 +220,11 @@ private:
 			else
 				className = classDecl;
 
-			// | [Class][Lnk] | Language | Survival | Points |
+			// | [Class][Lnk] | Language | Rounds | Points |
 			std::stringstream sst;
 			sst << "| " << std::setw(40) << std::left << std::string("[") + className + "][" + std::to_string(scoreboardLink++) + "]"
 				<< " | " << std::setw(10) << "C++"
-				<< " | " << std::setw(2) << std::right << sc.survival << " round"
-				<< (sc.survival == 1 ? " " : "s");
+				<< " | " << std::setw(6) << std::right << sc.survival;
 
 			for (int const &point : sc.history)
 				sst << " | " << std::setw(5) << std::right << point;
@@ -247,12 +246,11 @@ private:
 		std::ofstream ofs("scoreboard.txt");
 		if (ofs.is_open())
 		{
-			ofs << " :: Final Scoreboard\n\n"
-				<< "| Player                                   | Language   | Survival  |";
+			ofs << "| Player                                   | Language   | Rounds |";
 			for (size_t index = 0; index < rounds; ++index)
-				ofs << " R# " << std::setw(2) << (index + 1) <<  " |";
+				ofs << std::setw(6) << (index + 1) <<  " |";
 			ofs << "\n";
-			ofs << "|:---------------------------------------- |:---------- | ---------:|";
+			ofs << "|:---------------------------------------- |:---------- | ------:|";
 			for (size_t index = 0; index < rounds; ++index)
 				ofs << " -----:|";
 			ofs << "\n";
