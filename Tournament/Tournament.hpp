@@ -200,8 +200,8 @@ private:
 
 		size_t rounds = 0;
 		std::for_each(mScores.begin(), mScores.end(), [&rounds](ScoreCard const &sc) -> void {
-			if (rounds <= sc.survival)
-				rounds = sc.survival + 1;
+			if (rounds < sc.survival)
+				rounds = sc.survival;
 		});
 
 		int scoreboardLink = 4;
@@ -228,7 +228,7 @@ private:
 				<< (sc.survival == 1 ? " " : "s");
 
 			for (int const &point : sc.history)
-				sst << " | " << std::setw(8) << std::right << point;
+				sst << " | " << std::setw(5) << std::right << point;
 				
 			sst << " |";
 			lines.push_back(sst.str());
@@ -250,11 +250,11 @@ private:
 			ofs << " :: Final Scoreboard\n\n"
 				<< "| Player                                   | Language   | Survival  |";
 			for (size_t index = 0; index < rounds; ++index)
-				ofs << " Round " << std::setw(2) << (index + 1) <<  " |";
+				ofs << " R# " << std::setw(2) << (index + 1) <<  " |";
 			ofs << "\n";
 			ofs << "|:---------------------------------------- |:---------- | ---------:|";
 			for (size_t index = 0; index < rounds; ++index)
-				ofs << " --------:|";
+				ofs << " -----:|";
 			ofs << "\n";
 			for (size_t index : indices)
 				ofs << lines[index] << "\n";
