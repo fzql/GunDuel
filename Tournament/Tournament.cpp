@@ -15,6 +15,7 @@
 #include "FatedPlayer.hpp"
 #include "CBetaPlayer.hpp"
 #include "MontePlayer.hpp"
+#include "CamtoPlayer.hpp"
 #include "HanSoloPlayer.hpp"
 
 // Non C++ Entries
@@ -56,13 +57,14 @@ public:
 		case 10: return make_unique<FatedPlayer>(opponent);
 		case 11: return make_unique<CBetaPlayer>(opponent);
 		case 12: return make_unique<MontePlayer>(opponent);
-		case 13: return make_unique<HanSoloPlayer>(opponent);
+		case 13: return make_unique<CamtoPlayer>(opponent);
+		case 14: return make_unique<HanSoloPlayer>(opponent);
 		default: return nullptr;
 		}
 	}
 
 public:
-	static size_t size() { return 14; }
+	static size_t size() { return 15; }
 };
 
 int main()
