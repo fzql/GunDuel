@@ -18,8 +18,12 @@
 #include "CamtoPlayer.hpp"
 #include "HanSoloPlayer.hpp"
 
-// Non C++ Entries
+// Command Line Interface non-C++ Entries
 #include "ProxyPlayer.hpp"
+
+// Standard I/O Interface Entries
+#include "ChildProcessPlayer.hpp"
+// using TestChildPlayer = ChildProcessPlayer<0>;
 
 // Tournament
 #include "Tournament.hpp"
@@ -59,6 +63,7 @@ public:
 		case 12: return make_unique<MontePlayer>(opponent);
 		case 13: return make_unique<CamtoPlayer>(opponent);
 		case 14: return make_unique<HanSoloPlayer>(opponent);
+		// case 15: return make_unique<TestChildPlayer>(opponent);
 		default: return nullptr;
 		}
 	}
@@ -70,6 +75,9 @@ public:
 int main()
 {
 	size_t repetition = 100;
+
+	// Test Child Player Configuration
+	// TestChildPlayer::module() = "python TestChildPlayer.py";
 
 	Tournament<Pool> tournament(repetition);
 	tournament.run();
