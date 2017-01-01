@@ -224,7 +224,7 @@ private:
 			std::stringstream sst;
 			sst << "| " << std::setw(40) << std::left << std::string("[") + className + "][" + std::to_string(scoreboardLink++) + "]"
 				<< " | " << std::setw(10) << "C++"
-				<< " | " << std::setw(6) << std::right << sc.survival;
+				<< " | " << std::setw(6) << std::right << sc.pointTotal;
 
 			for (int const &point : sc.history)
 				sst << " | " << std::setw(5) << std::right << point;
@@ -246,7 +246,7 @@ private:
 		std::ofstream ofs("scoreboard.txt");
 		if (ofs.is_open())
 		{
-			ofs << "| Player                                   | Language   | Rounds |";
+			ofs << "| Player                                   | Language   | Points |";
 			for (size_t index = 0; index < rounds; ++index)
 				ofs << std::setw(6) << (index + 1) <<  " |";
 			ofs << "\n";
