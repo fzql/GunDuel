@@ -76,7 +76,7 @@ public:
 	// different newline conventions.
 	static const char* newline(NewLineStyle nls = NLS_CURRENT) {
 		static NewLineStyle style = NLS_CRLF;
-		if (nls == NLS_CURRENT) nls = style;
+		if (nls == NLS_CURRENT) nls = style; else style = nls;
 		switch (nls) {
 		default:
 		case NLS_CRLF: return "\r\n";
