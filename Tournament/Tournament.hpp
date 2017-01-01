@@ -9,6 +9,7 @@
 
 // Necessary classes
 #include <iostream>
+#include <fstream>
 #include <iomanip>
 #include <memory>
 #include <regex>
@@ -151,11 +152,11 @@ private:
 
 		std::for_each(mScores.begin(), mScores.end(), [&](ScoreCard &sc) -> void {
 			if (!sc.alive || sc.point > minPoint) return;
+			sc.history.push_back(sc.point);
 			// Only loop through tied players.
 			if (sc.pointTotal > minPointTotal)
 			{
 				// Advance tied player to next round.
-				sc.history.push_back(sc.point);
 				sc.survival++;
 			}
 			else
@@ -197,6 +198,12 @@ private:
 	{
 		std::regex classRegex("(?:.*) (.*)$");
 
+		size_t rounds = 0;
+		std::for_each(mScores.begin(), mScores.end(), [&rounds](ScoreCard const &sc) -> void {
+			if (rounds <= sc.survival)
+				rounds = sc.survival + 1;
+		});
+
 		int scoreboardLink = 4;
 
 		std::vector<std::string> lines;
@@ -215,12 +222,15 @@ private:
 
 			// | [Class][Lnk] | Language | Survival | Points |
 			std::stringstream sst;
-			sst << " | " << std::setw(40) << std::left << std::string("[") + className + "][" + std::to_string(scoreboardLink++) + "]"
+			sst << "| " << std::setw(40) << std::left << std::string("[") + className + "][" + std::to_string(scoreboardLink++) + "]"
 				<< " | " << std::setw(10) << "C++"
 				<< " | " << std::setw(2) << std::right << sc.survival << " round"
-				<< (sc.survival == 1 ? " " : "s")
-				<< " | " << std::setw(6) << std::right << sc.pointTotal
-				<< " |";
+				<< (sc.survival == 1 ? " " : "s");
+
+			for (int const &point : sc.history)
+				sst << " | " << std::setw(8) << std::right << point;
+				
+			sst << " |";
 			lines.push_back(sst.str());
 		}
 
@@ -234,12 +244,27 @@ private:
 		});
 
 		// Prints table for README.md
-		std::cout << " :: Final Scoreboard\n\n"
-			<< " | Player                                   | Language   | Survival  | Points |\n"
-			<< " |:---------------------------------------- |:---------- | ---------:| ------:|\n";
-		for (size_t index : indices)
-			std::cout << lines[index] << "\n";
-		std::cout << std::endl;
+		std::ofstream ofs("scoreboard.txt");
+		if (ofs.is_open())
+		{
+			ofs << " :: Final Scoreboard\n\n"
+				<< "| Player                                   | Language   | Survival  |";
+			for (size_t index = 0; index < rounds; ++index)
+				ofs << " Round " << std::setw(2) << (index + 1) <<  " |";
+			ofs << "\n";
+			ofs << "|:---------------------------------------- |:---------- | ---------:|";
+			for (size_t index = 0; index < rounds; ++index)
+				ofs << " --------:|";
+			ofs << "\n";
+			for (size_t index : indices)
+				ofs << lines[index] << "\n";
+			ofs << std::endl;
+			std::cout << " :: Succesfully written file scoreboard.txt" << std::endl;;
+		}
+		else
+		{
+			std::cout << " :: Error writing to scoreboard.txt" << std::endl;;
+		}
 	}
 
 private:

@@ -45,23 +45,23 @@ The binaries will be added to the repository if they meet the requirements and d
 
 05:11 AM Sunday, January 1, 2016 Coordinated Universal Time (UTC)
 
-| Player                                   | Language   | Survival  | Points | Test | Test |
-|:---------------------------------------- |:---------- | ---------:| ------:| ---- | ---- |
-| [CBetaPlayer][15]                        | C++        | 14 rounds |   5345 | test | test |
-| [MontePlayer][16]                        | C++        | 13 rounds |   8624 | test | test |
-| [FatedPlayer][14]                        | C++        | 12 rounds |   4583 | test | test |
-| [StudiousPlayer][12]                     | C++        | 11 rounds |   7279 | test | test |
-| [HanSoloPlayer][18]                      | C++        | 10 rounds |   4092 | test | test |
-| [BarricadePlayer][7]                     | C++        |  9 rounds |   4090 | test | test |
-| [BotRobotPlayer][8]                      | C++        |  8 rounds |   3123 | test | test |
-| [SadisticShooter][10]                    | C++        |  7 rounds |   4389 | test | test |
-| [SurvivorPlayer][13]                     | C++        |  6 rounds |   3729 | test | test |
-| [TurtlePlayer][6]                        | C++        |  5 rounds |   2988 | test | test |
-| [CamtoPlayer][17]                        | C++        |  4 rounds |   2651 | test | test |
-| [OpportunistPlayer][5]                   | C++        |  3 rounds |   1403 | test | test |
-| [GunClubPlayer][4]                       | C++        |  2 rounds |   1209 | test | test |
-| [DeceptivePlayer][11]                    | C++        |  1 round  |    826 | test |
-| [PlasmaPlayer][9]                        | C++        |  0 rounds |    410 |
+| Player                                   | Language   | Survival  | Round  1 | Round  2 | Round  3 | Round  4 | Round  5 | Round  6 | Round  7 | Round  8 | Round  9 | Round 10 | Round 11 | Round 12 | Round 13 | Round 14 | Round 15 |
+|:---------------------------------------- |:---------- | ---------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:| --------:|
+| [MontePlayer][16]                        | C++        | 14 rounds |     1201 |     1115 |     1063 |      936 |      839 |      724 |      660 |      557 |      475 |      356 |      224 |      174 |      112 |       53 |
+| [CBetaPlayer][15]                        | C++        | 13 rounds |      719 |      700 |      618 |      574 |      511 |      453 |      409 |      361 |      284 |      228 |      214 |      157 |      110 |       47 |
+| [StudiousPlayer][12]                     | C++        | 12 rounds |     1085 |     1058 |      958 |      854 |      803 |      703 |      620 |      528 |      415 |      319 |      233 |      153 |       78 |
+| [FatedPlayer][14]                        | C++        | 11 rounds |      625 |      547 |      530 |      496 |      449 |      391 |      363 |      292 |      282 |      242 |      202 |      116 |
+| [BarricadePlayer][7]                     | C++        | 10 rounds |      618 |      561 |      513 |      464 |      465 |      422 |      348 |      295 |      230 |      199 |      127 |
+| [BotRobotPlayer][8]                      | C++        |  9 rounds |      507 |      407 |      359 |      373 |      368 |      354 |      281 |      289 |      249 |      156 |
+| [SadisticShooter][10]                    | C++        |  8 rounds |      886 |      782 |      687 |      590 |      494 |      407 |      290 |      249 |      165 |
+| [HanSoloPlayer][18]                      | C++        |  7 rounds |      668 |      567 |      494 |      392 |      330 |      283 |      258 |      229 |
+| [SurvivorPlayer][13]                     | C++        |  6 rounds |      710 |      707 |      660 |      557 |      463 |      376 |      249 |
+| [TurtlePlayer][6]                        | C++        |  5 rounds |      669 |      631 |      539 |      460 |      346 |      270 |
+| [CamtoPlayer][17]                        | C++        |  4 rounds |      718 |      628 |      535 |      448 |      319 |
+| [OpportunistPlayer][5]                   | C++        |  3 rounds |      441 |      414 |      332 |      235 |
+| [GunClubPlayer][4]                       | C++        |  2 rounds |      497 |      383 |      300 |
+| [DeceptivePlayer][11]                    | C++        |  1 round  |      477 |      380 |
+| [PlasmaPlayer][9]                        | C++        |  0 rounds |      420 |
 
 Disqualified Players (Honorable Mentions)
 
