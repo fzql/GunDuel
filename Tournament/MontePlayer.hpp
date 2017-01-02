@@ -1,6 +1,3 @@
-// MontePlayer by TheNumberOne
-// PPCG: http://codegolf.stackexchange.com/a/105175/11933
-
 #ifndef __Monte_PLAYER_HPP__
 #define __Monte_PLAYER_HPP__
 
@@ -115,7 +112,6 @@ class MontePlayer final : public Player
 public:
 	MontePlayer(size_t opponent = -1) : Player(opponent)
 	{
-		srand((unsigned)time(NULL));
 		this->opponent = (int)opponent;
 	}
 
@@ -150,7 +146,7 @@ public:
 		int move = bestMove(current);
 
 		//Move string for debugging purposes.
-		char* m;
+		const char* m;
 
 		//We have to do this so our bots state is updated.
 		switch (move)
@@ -625,11 +621,14 @@ private:
 	//My own random functions.
 	int Random(int max)
 	{
-		return rand() % max;
+		return GetRandomInteger(max - 1);
 	}
 	double Random(double max)
 	{
-		return double(rand()) / (RAND_MAX + 1) * max;
+		static auto seed = std::chrono::system_clock::now().time_since_epoch().count();
+		static std::default_random_engine generator((unsigned)seed);
+		std::uniform_real_distribution<double> distribution(0.0, max);
+		return distribution(generator);
 	}
 };
 //We have to initialize this here for some reason.
