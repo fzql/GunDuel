@@ -17,6 +17,8 @@
 #include "MontePlayer.hpp"
 #include "CamtoPlayer.hpp"
 #include "HanSoloPlayer.hpp"
+#include <functional>
+#include "HumanPlayer.hpp"
 
 // Command Line Interface non-C++ Entries
 #include "ProxyPlayer.hpp"
@@ -28,7 +30,7 @@
 // Tournament
 #include "Tournament.hpp"
 
-// Support C++11
+// Attempt to support C++11 (now useless since many entries require C++14)
 #if __cplusplus > 201103L
 using std::make_unique;
 #else
@@ -40,41 +42,129 @@ namespace {
 }
 #endif
 
+struct LateEntryChild : public ChildProcessPlayer < 65536 > {
+	LateEntryChild(size_t opponent) : ChildProcessPlayer< 65536 >(opponent) {}
+};
+
 // Tournament pool of all valid entries.
 class Pool final
 {
 public:
+	enum { pool_size = 15 };
+
 	static std::unique_ptr<Player> newPlayer(size_t index, size_t opponent = -1)
 	{
-		switch (index)
-		{
-		case 0: return make_unique<GunClubPlayer>(opponent);
-		case 1: return make_unique<OpportunistPlayer>(opponent);
-		case 2: return make_unique<TurtlePlayer>(opponent);
-		case 3: return make_unique<BarricadePlayer>(opponent);
-		case 4: return make_unique<BotRobotPlayer>(opponent);
-		case 5: return make_unique<PlasmaPlayer>(opponent);
-		case 6: return make_unique<SadisticShooter>(opponent);
-		case 7: return make_unique<DeceptivePlayer>(opponent);
-		case 8: return make_unique<StudiousPlayer>(opponent);
-		case 9: return make_unique<SurvivorPlayer>(opponent);
-		case 10: return make_unique<FatedPlayer>(opponent);
-		case 11: return make_unique<CBetaPlayer>(opponent);
-		case 12: return make_unique<MontePlayer>(opponent);
-		case 13: return make_unique<CamtoPlayer>(opponent);
-		case 14: return make_unique<HanSoloPlayer>(opponent);
-		// case 15: return make_unique<TestChildPlayer>(opponent);
-		default: return nullptr;
-		}
+		if (index >= size()) return nullptr;
+		return registry()[index](opponent);
 	}
-
+private:
+	static std::vector<std::function<std::unique_ptr<Player>(size_t)>>& registry() {
+		static std::vector<std::function<std::unique_ptr<Player>(size_t)>> thereg;
+		return thereg;
+	};
 public:
-	static size_t size() { return 15; }
+	static void registerEntry(std::function<std::unique_ptr<Player>(size_t)> pred) { registry().emplace_back(pred); }
+	static size_t size() { return registry().size(); }
 };
 
-int main()
+int main(int argc, const char* argv[])
 {
 	size_t repetition = 100;
+
+	static std::string late_entry_module;
+	std::vector<std::string> arg(argv + 1, argv + argc);
+	bool versusHuman = false;
+	for (unsigned int i = 0, e = arg.size(); i < e; ++i) {
+		if (arg[i] == "-nls=LF") {
+			ChildProcessPlayer< 65536 >::newline(ChildProcessPlayer< 65536 >::NLS_LF);
+			continue;
+		}
+		if (arg[i] == "-nls=CR") {
+			ChildProcessPlayer< 65536 >::newline(ChildProcessPlayer< 65536 >::NLS_CR);
+			continue;
+		}
+		if (arg[i] == "-nls=CRLF") {
+			ChildProcessPlayer< 65536 >::newline(ChildProcessPlayer< 65536 >::NLS_CRLF);
+			continue;
+		}
+		if (arg[i] == "-human") {
+			versusHuman = true;
+			continue;
+		}
+		if (arg[i] == "-lateentry") {
+			// Consume the rest of the args
+			for (; ++i < e;) {
+				if (!late_entry_module.empty()) late_entry_module.push_back(' ');
+				late_entry_module += arg[i];
+			}
+			break;
+		}
+		// If we make it here, we have no idea what's going on, so print help:
+		std::cerr
+			<< "Usage:\n"
+			<< *argv << " [OPTIONS]\n"
+			"\n"
+			"With no [OPTIONS], this runs a standard tournament.\n"
+			"\n"
+			"OPTIONS include:\n"
+			"  -nls=LF or -nls=CR or -nls=CRLF\n"
+			"    Sets new line style for late entry (default CRLF).\n"
+			"  -human\n"
+			"    Instead of the current tournament entries adds a human player.\n"
+			"    This option is ignored unless you also use -lateentry.\n"
+			"    Note that this option must come *BEFORE* the -lateentry flag.\n"
+			"  -lateentry [command]\n"
+			"    Sets a \"late entry\", using the ChildProcessPlayer.\n"
+			"    If this option is used, all arguments that follow will be used\n"
+			"    as the command line to invoke the child.  The child process must\n"
+			"    always read a line from stdin; it must always write a response\n"
+			"    to stdout when the line is 'F'.  The response should be one of:"
+			"    0, 1, 2, -, or = to load, shoot bullet, shoot plasma, raise metal,\n"
+			"    or raise thermal respectively.  See contest rules for more details.\n"
+			"\n"
+			"    NOTE: LATE ENTRIES APPEAR ON THE SCOREBOARD AS \"LateEntryChild\"\n."
+			<< std::endl;
+
+		return 1;
+	}
+
+#define REGISTER_ENTRY(RAW_TYPE) Pool::registerEntry([](size_t opponent){return make_unique<RAW_TYPE>(opponent);})
+	if (versusHuman && late_entry_module.empty()) {
+		std::cerr
+			<< "Sorry, but you can't play all the standard entries\n"
+			<< "using this executable.  You can, however, play your own\n"
+			<< "late entry." << std::endl;
+		return 1;
+	}
+	if (versusHuman) {
+		REGISTER_ENTRY(HumanPlayer);
+	}
+	else
+	{
+		REGISTER_ENTRY(GunClubPlayer);
+		REGISTER_ENTRY(OpportunistPlayer);
+		REGISTER_ENTRY(TurtlePlayer);
+		REGISTER_ENTRY(BarricadePlayer);
+		REGISTER_ENTRY(BotRobotPlayer);
+		REGISTER_ENTRY(PlasmaPlayer);
+		REGISTER_ENTRY(SadisticShooter);
+		REGISTER_ENTRY(DeceptivePlayer);
+		REGISTER_ENTRY(StudiousPlayer);
+		REGISTER_ENTRY(SurvivorPlayer);
+		REGISTER_ENTRY(FatedPlayer);
+		REGISTER_ENTRY(CBetaPlayer);
+		REGISTER_ENTRY(MontePlayer);
+		REGISTER_ENTRY(CamtoPlayer);
+		REGISTER_ENTRY(HanSoloPlayer);
+	}
+
+	if (!late_entry_module.empty()) {
+		ChildProcessPlayer< 65536 >::module() = late_entry_module.c_str();
+		std::cerr
+			<< "--- LATE ENTRY FROM COMMAND LINE:\n"
+			<< "[" << late_entry_module << "]" << std::endl;
+		REGISTER_ENTRY(LateEntryChild);
+	}
 
 	// Test Child Player Configuration
 	// TestChildPlayer::module() = "python TestChildPlayer.py";
