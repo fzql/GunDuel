@@ -159,7 +159,7 @@ int main(int argc, const char* argv[])
 		REGISTER_ENTRY(CamtoPlayer);
 		REGISTER_ENTRY(HanSoloPlayer);
 		REGISTER_ENTRY(SpecificPlayer);
-		REGISTER_ENTRY(HanSoloPlayer);
+		REGISTER_ENTRY(NotSoPatientPlayer);
 	}
 
 	if (!late_entry_module.empty()) {

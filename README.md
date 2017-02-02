@@ -1,6 +1,6 @@
 # GunDuel
 
-Futuristic Gun Duel Tournament at [Programming Puzzles & Code Golf at Stack Exchange][1]
+This repository corresponds to the Futuristic Gun Duel Tournament organized at [Programming Puzzles & Code Golf at Stack Exchange][1]. The tournament ended on Thu, 02 Feb 2017 07:56:36 GMT.
 
 ## C++ Submissions
 
@@ -41,28 +41,29 @@ Command Line and Return Code Requirements
 
 The binaries will be added to the repository if they meet the requirements and does no harm to any computer.
 
-## Current Standing (update upon new submission)
+## Tournament Standing
 
-11:12 AM Sunday, January 1, 2016 Coordinated Universal Time (UTC)
+Thu, 02 Feb 2017 08:02:23 GMT
 
-| Player                                   | Language   | Points |     1 |     2 |     3 |     4 |     5 |     6 |     7 |     8 |     9 |    10 |    11 |    12 |    13 |    14 |
-|:---------------------------------------- |:---------- | ------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
-| [CBetaPlayer][15]                        | C++        |   5294 |   704 |   678 |   635 |   575 |   480 |   419 |   395 |   352 |   300 |   241 |   204 |   153 |   106 |    52 |
-| [MontePlayer][16]                        | C++        |   8533 |  1209 |  1132 |  1044 |   921 |   838 |   755 |   641 |   558 |   450 |   368 |   258 |   197 |   114 |    48 |
-| [StudiousPlayer][12]                     | C++        |   7794 |  1113 |  1033 |   964 |   882 |   790 |   697 |   602 |   523 |   432 |   308 |   231 |   139 |    80 |
-| [FatedPlayer][14]                        | C++        |   4549 |   639 |   595 |   499 |   520 |   436 |   379 |   371 |   310 |   270 |   244 |   175 |   111 |
-| [BarricadePlayer][7]                     | C++        |   4228 |   643 |   558 |   496 |   447 |   454 |   409 |   372 |   302 |   239 |   176 |   132 |
-| [BotRobotPlayer][8]                      | C++        |   3340 |   513 |   414 |   344 |   391 |   369 |   324 |   306 |   255 |   261 |   163 |
-| [SadisticShooter][10]                    | C++        |   4472 |   878 |   756 |   697 |   595 |   506 |   393 |   297 |   202 |   148 |
-| [SurvivorPlayer][13]                     | C++        |   3972 |   728 |   714 |   657 |   546 |   459 |   395 |   286 |   187 |
-| [TurtlePlayer][6]                        | C++        |   3201 |   661 |   638 |   555 |   441 |   381 |   308 |   217 |
-| [CamtoPlayer][17]                        | C++        |   2960 |   713 |   609 |   548 |   434 |   352 |   304 |
-| [HanSoloPlayer][18]                      | C++        |   2335 |   628 |   532 |   465 |   395 |   315 |
-| [OpportunistPlayer][5]                   | C++        |   1451 |   443 |   415 |   351 |   242 |
-| [GunClubPlayer][4]                       | C++        |   1223 |   489 |   408 |   326 |
-| [DeceptivePlayer][11]                    | C++        |    875 |   476 |   399 |
-| [PlasmaPlayer][9]                        | C++        |    404 |   404 |
-
+| Player                                   | Language   | Points |     1 |     2 |     3 |     4 |     5 |     6 |     7 |     8 |     9 |    10 |    11 |    12 |    13 |    14 |    15 |    16 |
+|:---------------------------------------- |:---------- | ------:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:| -----:|
+| [MontePlayer][16]                        | C++        |  11413 |  1415 |  1326 |  1247 |  1106 |  1049 |   942 |   845 |   754 |   685 |   555 |   482 |   381 |   287 |   163 |   115 |    61 |
+| [CBetaPlayer][15]                        | C++        |   7014 |   855 |   755 |   706 |   683 |   611 |   593 |   513 |   470 |   414 |   371 |   309 |   251 |   192 |   143 |   109 |    39 |
+| [StudiousPlayer][12]                     | C++        |  10014 |  1324 |  1233 |  1125 |  1015 |   907 |   843 |   763 |   635 |   555 |   478 |   403 |   300 |   201 |   156 |    76 |
+| [FatedPlayer][14]                        | C++        |   6222 |   745 |   683 |   621 |   655 |   605 |   508 |   494 |   456 |   395 |   317 |   241 |   197 |   167 |   138 |
+| [HanSoloPlayer][18]                      | C++        |   5524 |   748 |   668 |   584 |   523 |   490 |   477 |   455 |   403 |   335 |   293 |   209 |   186 |   153 |
+| [SurvivorPlayer][13]                     | C++        |   5384 |   769 |   790 |   667 |   574 |   465 |   402 |   354 |   338 |   294 |   290 |   256 |   185 |
+| [SpecificPlayer][19]                     | C++        |   5316 |   845 |   752 |   669 |   559 |   488 |   427 |   387 |   386 |   340 |   263 |   200 |
+| [DeceptivePlayer][11]                    | C++        |   4187 |   559 |   445 |   464 |   474 |   462 |   442 |   438 |   369 |   301 |   233 |
+| [NotSoPatientPlayer][20]                 | C++        |   5105 |   931 |   832 |   742 |   626 |   515 |   469 |   352 |   357 |   281 |
+| [BarricadePlayer][7]                     | C++        |   4171 |   661 |   677 |   614 |   567 |   527 |   415 |   378 |   332 |
+| [BotRobotPlayer][8]                      | C++        |   3381 |   607 |   510 |   523 |   499 |   496 |   425 |   321 |
+| [SadisticShooter][10]                    | C++        |   3826 |   905 |   780 |   686 |   590 |   475 |   390 |
+| [TurtlePlayer][6]                        | C++        |   3047 |   754 |   722 |   608 |   539 |   424 |
+| [CamtoPlayer][17]                        | C++        |   2308 |   725 |   641 |   537 |   405 |
+| [OpportunistPlayer][5]                   | C++        |   1173 |   426 |   420 |   327 |
+| [GunClubPlayer][4]                       | C++        |    888 |   500 |   388 |
+| [PlasmaPlayer][9]                        | C++        |    399 |   399 |
 
 Disqualified Players (Honorable Mentions)
 
@@ -86,3 +87,5 @@ Disqualified Players (Honorable Mentions)
  [16]: http://codegolf.stackexchange.com/a/105175/11933
  [17]: http://codegolf.stackexchange.com/a/105224/11933
  [18]: http://codegolf.stackexchange.com/a/105263/11933
+ [19]: http://codegolf.stackexchange.com/a/107499/11933
+ [20]: http://codegolf.stackexchange.com/a/108836/11933
