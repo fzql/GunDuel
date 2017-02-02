@@ -17,6 +17,8 @@
 #include "MontePlayer.hpp"
 #include "CamtoPlayer.hpp"
 #include "HanSoloPlayer.hpp"
+#include "SpecificPlayer.hpp"
+#include "NotSoPatientPlayer.hpp"
 #include <functional>
 #include "HumanPlayer.hpp"
 
@@ -50,7 +52,7 @@ struct LateEntryChild : public ChildProcessPlayer < 65536 > {
 class Pool final
 {
 public:
-	enum { pool_size = 15 };
+	enum { pool_size = 17 };
 
 	static std::unique_ptr<Player> newPlayer(size_t index, size_t opponent = -1)
 	{
@@ -74,7 +76,7 @@ int main(int argc, const char* argv[])
 	static std::string late_entry_module;
 	std::vector<std::string> arg(argv + 1, argv + argc);
 	bool versusHuman = false;
-	for (unsigned int i = 0, e = arg.size(); i < e; ++i) {
+	for (size_t i = 0, e = arg.size(); i < e; ++i) {
 		if (arg[i] == "-nls=LF") {
 			ChildProcessPlayer< 65536 >::newline(ChildProcessPlayer< 65536 >::NLS_LF);
 			continue;
@@ -155,6 +157,8 @@ int main(int argc, const char* argv[])
 		REGISTER_ENTRY(CBetaPlayer);
 		REGISTER_ENTRY(MontePlayer);
 		REGISTER_ENTRY(CamtoPlayer);
+		REGISTER_ENTRY(HanSoloPlayer);
+		REGISTER_ENTRY(SpecificPlayer);
 		REGISTER_ENTRY(HanSoloPlayer);
 	}
 
