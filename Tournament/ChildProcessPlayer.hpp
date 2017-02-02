@@ -57,7 +57,7 @@
 // your opponent's ammo if you're doing this).  Note that the opponent's action is
 // also one of '0', '1', '2', '-', or '=', and is in the second character.
 template <unsigned id>
-class ChildProcessPlayer final : public Player 
+class ChildProcessPlayer : public Player 
 {
 public:
 	// Both a setter and getter of the module used for this player type
